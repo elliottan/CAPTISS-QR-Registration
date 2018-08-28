@@ -12,12 +12,17 @@ public class CSVUtils {
     private boolean exceptionCaught = false;
     private String exceptionString = "";
 
-    public CSVUtils(String csvFile, List<String> headers) {
+    // Extract data from a csv file with path "csvFile", that has "ignoreLines" number of rows to be ignroed,
+    // and with column data corresponding to the "headers" list provided
+    public CSVUtils(String csvFile, List<String> headers, int ignoreLines) {
         Scanner scanner = null;
         allLines = new HashMap<>();
         try {
             scanner = new Scanner(new File(csvFile));
-            scanner.nextLine(); // ignore header line
+
+            for (int i = 0; i < ignoreLines; i++)
+                scanner.nextLine(); // ignore header line
+
             while (scanner.hasNext()) {
                 List<String> line = parseLine(scanner.nextLine());
                 HashMap<String, String> record = new HashMap<>();

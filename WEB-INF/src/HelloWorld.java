@@ -21,7 +21,7 @@ public class HelloWorld extends HttpServlet {
       // Open and parse the csv file of data
       CSVUtils csvutils = new CSVUtils("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\farewellattendance.csv",
               new ArrayList<>() {{add("p1no"); add("nric"); add("name"); add("diet"); add("salutatino");
-              add("halal"); add("gender"); add("qrno"); add("picpath"); add("email");}});
+              add("halal"); add("gender"); add("qrno"); add("picpath"); add("email");}}, 1);
       HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();	// Get array of all the data
 //      sContext.log(allLines.toString());
       application.setAttribute("farewellrecords", allLines);

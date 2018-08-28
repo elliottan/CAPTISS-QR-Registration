@@ -28,7 +28,7 @@ public class Admin extends HttpServlet {
 
       // Open and parse the csv file of data (immediately when server starts up)
       CSVUtils csvutils = new CSVUtils("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\masterstea30aug2018.csv",
-              new ArrayList<>() {{add("id"); add("name"); add("email");}});
+              new ArrayList<>() {{add("id"); add("name"); add("email");}}, 1);
       HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();	// Get array of all the data
       application.setAttribute("masterstearecords", allLines); // Store in server application for all to access
       application.log("Successfully pulled masters tea records from file");

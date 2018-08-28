@@ -3,7 +3,6 @@
     <META HTTP-EQUIV="Refresh" CONTENT="5">
     <body>
         <!-- Call the Admin servlet to write updates to a file -->
-        <jsp:include page="/Admin" />
 
         <h1>IP address to connect to server is: ${ipaddress}</h1>
 

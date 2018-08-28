@@ -23,21 +23,9 @@ public class MastersTea extends HttpServlet {
       message = "";
 
       application = getServletContext();  // Get context for logging purposes
-//      sContext.log(System.getProperty("user.dir"));
-//      Path path = FileSystems.getDefault().getPath(".").toAbsolutePath();
-//      sContext.log(path.toString());
-
-      // Open and parse the csv file of data
-//      CSVUtils csvutils = new CSVUtils("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\masterstea30aug2018.csv");
-//      HashMap<String, List<String>> allLines = csvutils.getLines();	// Get array of all the data
-//      application.setAttribute("records", allLines);
-//      sContext.log(allLines.toString());
 
       // Retrieve records already held on the server
       allLines = (HashMap<String, HashMap<String, String>>)application.getAttribute("masterstearecords");
-//      for (List<String> line : allLines.values()) {	// Print each line of data
-//         message += line + "<br />";
-//      }
    }
 
    // Method to handle GET method request.

@@ -11,31 +11,29 @@
      Welcome to Tomcat
   </description>
 
-<servlet>
-   <servlet-name>HelloWorld</servlet-name>
-   <servlet-class>HelloWorld</servlet-class>
-</servlet>
-<servlet>
-    <servlet-name>MastersTea</servlet-name>
-    <servlet-class>MastersTea</servlet-class>
-</servlet>
-<servlet>
-    <servlet-name>Admin</servlet-name>
-    <servlet-class>Admin</servlet-class>
-    <load-on-startup>1</load-on-startup>
-</servlet>
+    <!-- Servlet Context Listener for
+    <listener>
+        <listener-class>com.mypackage.MyServletContextListener</listener-class>
+    </listener> -->
 
-<servlet-mapping>
-   <servlet-name>HelloWorld</servlet-name>
-   <url-pattern>/HelloWorld</url-pattern>
-</servlet-mapping>
-<servlet-mapping>
-    <servlet-name>MastersTea</servlet-name>
-    <url-pattern>/MastersTea</url-pattern>
-</servlet-mapping>
-<servlet-mapping>
-    <servlet-name>Admin</servlet-name>
-    <url-pattern>/Admin</url-pattern>
-</servlet-mapping>
+    <!-- Servlet mappings -->
+    <servlet>
+        <servlet-name>MastersTea</servlet-name>
+        <servlet-class>MastersTea</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <servlet-class>Admin</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MastersTea</servlet-name>
+        <url-pattern>/MastersTea</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
 
 </web-app>
