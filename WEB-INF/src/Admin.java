@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +48,12 @@ public class Admin extends HttpServlet {
    // Method to handle GET method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-      application.log("Admin servlet called");
+      // Back up the data to the file
+      application.log("Writing data to file...");
+
+      // Redirect back to admin page
+      RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+      dispatcher.forward(request, response);
    }
 
    // Method to handle POST method request.

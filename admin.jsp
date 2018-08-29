@@ -1,13 +1,14 @@
 <html>
    <head><title>Server</title></head>
-    <META HTTP-EQUIV="Refresh" CONTENT="5">
+    <!-- META HTTP-EQUIV="Refresh" CONTENT="5" -->
     <body>
-        <!-- Call the Admin servlet to write updates to a file -->
-
         <h1>IP address to connect to server is: ${ipaddress}</h1>
+        <form action = "Admin" method = "POST">
+            <input type="submit" value="Refresh and backup" />
+        </form>
 
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-        <table>
+        <table border="3">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
