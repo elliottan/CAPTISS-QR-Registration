@@ -24,27 +24,29 @@
     </div>
   </nav>
   <div class="container">
-    <div class="row">
-      <div class="col-md-5">
+    <div class="row mainrow">
+      <div class="col-md-4 poster">
         <!-- In the file, just replace the image with the new
         image called masterstea to change it -->
         <img src = "images/masterstea.jpg" alt="" class="posterimg">
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 col-md-offset-1 col2">
         <img src = "images/mainlogo.png" alt="" class="mainlogo" >
 
         <div class="row">
-          <div class="col-md-offset-2 col-md-7 inputrow">
+          <div class="col-md-offset-1 col-md-8 inputrow">
 
             <form action = "MastersTea" method = "POST" class="QR">
               <p class="QRCODE">QR Code:</p> <input type = "text" name = "qrcode" autofocus>
               <a href="#" class="btn btn-sm animated-button victoria-one" value="Submit">Submit</a>
 
             </div>
-            <input type = "submit" value = "Submit" />
+            <input type = "submit" value = "Submit" / class="hiddenbutton">
           </form>
         </div>
-        ${requestScope["responsemessage"]}
+        <div class="row">
+          ${requestScope["responsemessage"]}
+        </div>
       </div>
     </div>
   </div>

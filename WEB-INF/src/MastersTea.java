@@ -40,17 +40,12 @@ public class MastersTea extends HttpServlet {
       // PrintWriter out = response.getWriter();
       String message = "<h1>Error: no registration record found for QR code provided.</h1>";
       if (record != null) {
-         // Found record, print welcome message
-         // out.println("<h1>Welcome, " + record.get("name") + "!</h1>");
-
+         // Found record
          ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>)application.getAttribute("registrationtime");
-//         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-//         Date date = new Date();
-//         System.out.println(formatter.format(date));
 
          if (!registrationTime.containsKey(record.get("id"))) {
             registrationTime.putIfAbsent(record.get("id"), new Date());
-            application.log(registrationTime.toString());
+//            application.log(registrationTime.toString());
             message = "<h1>Welcome, " + record.get("name") + "! You have been successfully registered.</h1>";
          } else { // Already registered
             message = "<h1>Welcome back, " + record.get("name") + ", you have already been registered previously.</h1>";

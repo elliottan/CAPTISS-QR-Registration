@@ -27,10 +27,10 @@ public class CSVUtils {
                 List<String> line = parseLine(scanner.nextLine());
                 HashMap<String, String> record = new HashMap<>();
 
-                // 0:No, 1:Name, 2:EmailAddress
+                // match each record to each header
                 for (int i = 0; i < headers.size(); i++) {
-                    record.put(headers.get(i), line.get(i));
-                    allLines.put(line.get(0), record);    // Use No as unique ID
+                    record.put(headers.get(i), line.get(i).replace("\"",""));
+                    allLines.put(line.get(0), record);    // Use first column as unique ID
                 }
             }
         } catch (Exception e) {
