@@ -8,7 +8,6 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.ArrayList;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -17,27 +16,25 @@ import java.util.concurrent.ConcurrentHashMap;
 // Extend HttpServlet class
 // Admin Servlet will be loaded on Web Server startup (specified in web.xml file)
 public class Admin extends HttpServlet {
-   private String message;
+   private String message = "";
    private ServletContext application; // Get context for logging purposes
 
    public void init() throws ServletException {
       // Do required initialization
-      message = "";
-
       application = getServletContext();  // Get context for logging purposes
       application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 
       // Open and parse the csv file of data (immediately when server starts up)
+      // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
       CSVUtils csvutils = new CSVUtils("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\files\\masterstea30aug2018.csv",
               new ArrayList<>() {{add("id"); add("name"); add("email");}}, 2);
       HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();	// Get array of all the data
       application.setAttribute("masterstearecords", allLines); // Store in server application for all to access
       application.log("Successfully pulled masters tea records from file");
 
-      InetAddress ip;
+      // Get web server's current IP address and store it as an application variable
       try {
-
-         ip = InetAddress.getLocalHost();
+         InetAddress ip = InetAddress.getLocalHost();
          application.setAttribute("ipaddress", ip.getHostAddress());
          application.log("Current IP address : " + ip.getHostAddress());
       } catch (UnknownHostException e) {
@@ -49,9 +46,9 @@ public class Admin extends HttpServlet {
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
       SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+      FileOutputStream fout = null;
 
       // Back up the data to the file
-      FileOutputStream fout = null;
       try {
          File file = new File("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\files\\outputfile.csv");
          file.createNewFile();
@@ -68,6 +65,8 @@ public class Admin extends HttpServlet {
          application.log("Successfully written to output file");
       } catch (FileNotFoundException e) {
          application.log("Error when trying to open file to write to (the file may be open), please try writing again");
+      } catch (Exception e) {
+         application.log("General exception thrown during file opening or writing, but not sure what it is");
       } finally {
          if (fout != null)
             fout.close();

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
 
+/* Class that parses a .csv file, taken from online */
 public class CSVUtils {
 
     private static final char DEFAULT_SEPARATOR = ',';
@@ -46,10 +47,6 @@ public class CSVUtils {
         if (!exceptionCaught) {
             return allLines;
         } else {
-            // If there was an error, store the string in the list and return it
-//            List<String> exceptionListString = new ArrayList<>();
-//            exceptionListString.add(exceptionString);
-//            allLines.push(exceptionListString);
             return allLines;
         }
     }

@@ -11,11 +11,6 @@
      Welcome to Tomcat
   </description>
 
-    <!-- Servlet Context Listener for
-    <listener>
-        <listener-class>com.mypackage.MyServletContextListener</listener-class>
-    </listener> -->
-
     <!-- Servlet mappings -->
     <servlet>
         <servlet-name>MastersTea</servlet-name>

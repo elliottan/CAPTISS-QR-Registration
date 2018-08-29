@@ -1,6 +1,6 @@
 <html>
    <head><title>Server</title></head>
-    <META HTTP-EQUIV="Refresh" CONTENT="5">
+    <!-- META HTTP-EQUIV="Refresh" CONTENT="5" -->
     <body>
         <h1>IP address to connect to server is: ${ipaddress}</h1>
         <form action = "Admin" method = "POST">
