@@ -65,7 +65,7 @@ a.animated-button:link:hover, a.animated-button:visited:hover {
   text-shadow: none;
 }
 a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
-  height: 450%;
+  height: 400%;
 }
 a.animated-button:link, a.animated-button:visited {
   position: relative;
@@ -171,3 +171,12 @@ html, body, {
   .mainrow{
     margin-right:-100px !important;
   }
+}
+.requestrow h1{
+    font-family:raleway !important;
+    color:white;
+    font-size:18px !important;
+}
+.inputrow{
+    margin-top:-15px;
+}

@@ -44,7 +44,7 @@
             <input type = "submit" value = "Submit" / class="hiddenbutton">
           </form>
         </div>
-        <div class="row">
+        <div class="row requestrow">
           ${requestScope["responsemessage"]}
         </div>
       </div>
