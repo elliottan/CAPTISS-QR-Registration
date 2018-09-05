@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Masters Tea Registration</title>
+  <title>Welcome Dinner 2018 Registration</title>
   <link rel="stylesheet" type="text/css" href="css/custom.css" >
   <link rel="stylesheet" href="css/bootstrap.css">
   <meta charset="utf-8">
@@ -20,15 +20,7 @@
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Home</a></li> -->
-        <form action = "Admin" method = "GET">
-            <input type="submit" value="Admin" />
-        </form>
-        <form action = "WalkIn" method = "GET">
-            <input type="submit" value="Walk-In Registration" />
-        </form>
-        <form action = "Logout" method = "POST">
-            <input type="submit" value="Logout" />
-        </form>
+
       </ul>
     </div>
   </nav>
@@ -37,7 +29,7 @@
         <div class="col-md-6 poster">
           <!-- In the file, just replace the image with the new
           image called masterstea to change it -->
-          <img src = "images/masterstea.jpg" alt="" class="posterimg">
+          <img src = "images/formaldinner2.png" alt="" class="posterimg">
         </div>
         <div class="col-md-6 col2">
           <img src = "images/mainlogo.png" alt="" class="mainlogo" >
@@ -45,9 +37,10 @@
           <div class="row">
             <div class="col-md-offset-1 col-md-8 inputrow">
 
-              <form action = "MastersTea" method = "POST" class="QR">
-               <p class="QRCODE">QR Code:</p> <input type = "text" name = "qrcode" autofocus autocomplete="off">
+              <form action = "FormalDinner" method = "POST" class="QR">
+               <p class="QRCODE">QR Code:</p> <input type = "text" name = "qrcode" autofocus>
                 <!-- <a href="#" class="btn btn-sm animated-button victoria-one" value="Submit">Submit</a> -->
+
               </div>
               <input type = "submit" value = "Submit" / class="hiddenbutton">
             </form>

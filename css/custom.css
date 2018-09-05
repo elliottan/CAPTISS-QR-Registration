@@ -5,9 +5,8 @@
   background-color:#7C133A;
 }
 .posterimg{
-  width:325px;
+  width:100%;
   border: 3px solid wheat;
-  margin-left: 40px;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -16,13 +15,14 @@
   margin-top: -15px;
 }
 .mainlogo{
-  width:80%;
+  width:50%;
   margin-bottom:30px;
   background-color:wheat;
   margin-top:30px;
   padding:30px;
   border: 3px solid gold;
   border-radius:10px;
+  margin-left:50px;
 }
 
 
@@ -65,7 +65,7 @@ a.animated-button:link:hover, a.animated-button:visited:hover {
   text-shadow: none;
 }
 a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
-  height: 400%;
+  height: 450%;
 }
 a.animated-button:link, a.animated-button:visited {
   position: relative;
@@ -110,7 +110,7 @@ input[type=text] {
   border-color: rgba(0,0,0,.15);
   background-color: white;
   font-size: 16px;
-  width:50%;
+  width:30%;
 }
 .QRCODE{
   color: white;
@@ -158,6 +158,7 @@ html, body, {
 }
 .col2{
   margin-top:-30px;
+  padding-left:80px !important;
 }
 .hiddenbutton{
   display:none;
@@ -170,13 +171,14 @@ html, body, {
 @media screen and (min-width: 800px) {
   .mainrow{
     margin-right:-100px !important;
+    margin-top:30px;
   }
-}
-.requestrow h1{
-    font-family:raleway !important;
-    color:white;
-    font-size:18px !important;
-}
-.inputrow{
-    margin-top:-15px;
+.requestrow body{
+  color:white !important;
+  font-family:raleway !important;
+  margin-left:-60px !important;
+  width:100%;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  margin-top:0px;
 }

@@ -6,33 +6,25 @@
         <form action = "Admin" method = "POST">
             <input type="submit" value="Refresh and backup" />
         </form>
-        <!-- <form action = "Email" method = "POST">
-            <input type="submit" value="Send emails" />
-        </form> -->
-        <form action = "MastersTea" method = "GET">
-            <input type="submit" value="Masters Tea Registration" />
-        </form>
-        <form action = "WalkIn" method = "GET">
-            <input type="submit" value="Walk-In Registration" />
-        </form>
-        <form action = "Logout" method = "POST">
-            <input type="submit" value="Logout" />
-        </form>
 
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
         <table border="3">
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Email</th>
                 <th>Time-In</th>
+                <th>Name</th>
+                <th>House</th>
+                <th>Dietary</th>
+                <th>Halal</th>admin.jsp
             </tr>
             <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
                 <tr>
-                    <td>${record.get("id")}</td>
-                    <td>${record.get("name")}</td>
-                    <td>${record.get("email")}</td>
+                    <td>${status.count}</td>
                     <td>${registrationtime.get(record.get("id"))}</td>
+                    <td>${record.get("name")}</td>
+                    <td>${record.get("house")}</td>
+                    <td>${record.get("dietary")}</td>
+                    <td>${record.get("halal")}</td>
                 </tr>
             </c:forEach>
         </table>

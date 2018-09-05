@@ -11,15 +11,41 @@
      Welcome to Tomcat
   </description>
 
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
     <!-- Servlet mappings -->
     <servlet>
         <servlet-name>MastersTea</servlet-name>
         <servlet-class>MastersTea</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>FormalDinner</servlet-name>
+        <servlet-class>FormalDinner</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Admin</servlet-name>
         <servlet-class>Admin</servlet-class>
         <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Email</servlet-name>
+        <servlet-class>Email</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WalkIn</servlet-name>
+        <servlet-class>WalkIn</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -27,8 +53,28 @@
         <url-pattern>/MastersTea</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>FormalDinner</servlet-name>
+        <url-pattern>/FormalDinner</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Email</servlet-name>
+        <url-pattern>/Email</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WalkIn</servlet-name>
+        <url-pattern>/WalkIn</url-pattern>
     </servlet-mapping>
 
 </web-app>

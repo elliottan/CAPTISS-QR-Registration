@@ -1,16 +1,16 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.Date;
 
 // Extend HttpServlet class
-public class MastersTea extends HttpServlet {
+public class FormalDinner extends HttpServlet {
    private String message = "";
    private HashMap<String, HashMap<String, String>> allLines;
    private ServletContext application;
@@ -22,37 +22,30 @@ public class MastersTea extends HttpServlet {
       allLines = (HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords");
    }
 
-   // Check if user is logged in
-   private void verifyLoggedIn(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-      if (request.getSession(false) == null
-              || request.getSession(true).getAttribute("username") == null ) {
-         // Redirect back to login page
-         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-         dispatcher.forward(request, response);
-         return;
-      }
-   }
-
-   // Method to handle POST method request.
-   public void doPost(HttpServletRequest request, HttpServletResponse response)
+   // Method to handle GET method request.
+   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-      verifyLoggedIn(request, response);
-
       // Set response content type
       response.setContentType("text/html");
       message = request.getParameter("qrcode");
 
       // Get corresponding record based on qr code (id)
       HashMap<String, String> record = allLines.get(message);
-      message = "<h1>Error: no registration record found for QR code provided.</h1>"; // set default message
+      message = "Error: no registration record found for QR code provided."; // set default message
       if (record != null) {   // Found record
-         ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+         ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>)application.getAttribute("registrationtime");
+
          if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
             registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
-            message = "Welcome, " + record.get("name") + "! You have been successfully registered.";
+//            message = "Welcome, " + record.get("name") + ", you have been successfully registered.";
+            message = "Welcome, <b>" + record.get("name") + "</b> from <b>" + record.get("house") + "</b>!"
+                    + " Please confirm that you are having <b>"
+                    +  record.get("dietary").substring(0, record.get("dietary").indexOf(':')) + ", " + record.get("halal") + ".</b>";
          } else { // Already registered, do nothing
-            message = "Welcome back, " + record.get("name") + ", you have already been registered previously.";
+//            message = "Welcome back, " + record.get("name") + ", you have already been registered previously.";
+            message = "Welcome back, <b>" + record.get("name") + "</b> from <b>" + record.get("house") + "</b>!"
+                    + " Please confirm that you are having <b>"
+                    +  record.get("dietary").substring(0, record.get("dietary").indexOf(':')) + ", " + record.get("halal") + ".</b>";
          }
       } else {
          // No record found
@@ -60,16 +53,14 @@ public class MastersTea extends HttpServlet {
 
       // Redirect to qrcode request page with welcome message
       request.setAttribute("responsemessage", message);
-      RequestDispatcher dispatcher = application.getRequestDispatcher("/masterstea.jsp");
+      RequestDispatcher dispatcher = application.getRequestDispatcher("/formaldinner.jsp");
       dispatcher.forward(request, response);
    }
 
-   // Method to handle GET method request.
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
+   // Method to handle POST method request.
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-      verifyLoggedIn(request, response);
-      RequestDispatcher dispatcher = application.getRequestDispatcher("/masterstea.jsp");
-      dispatcher.forward(request, response);
+      doGet(request, response);
    }
 
    public void destroy() {
