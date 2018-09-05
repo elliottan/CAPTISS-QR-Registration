@@ -22,22 +22,16 @@ public class MastersTea extends HttpServlet {
       allLines = (HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords");
    }
 
-   // Check if user is logged in
-   private void verifyLoggedIn(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-      if (request.getSession(false) == null
-              || request.getSession(true).getAttribute("username") == null ) {
-         // Redirect back to login page
-         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-         dispatcher.forward(request, response);
-         return;
-      }
-   }
-
    // Method to handle POST method request.
    public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-      verifyLoggedIn(request, response);
+       // If user is not logged in, redirect to login page
+       if(!Admin.isLoggedIn(request, response)) {
+           // Redirect back to login page
+           RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+           dispatcher.forward(request, response);
+           return;
+       }
 
       // Set response content type
       response.setContentType("text/html");
@@ -67,7 +61,14 @@ public class MastersTea extends HttpServlet {
    // Method to handle GET method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-      verifyLoggedIn(request, response);
+       // If user is not logged in, redirect to login page
+       if(!Admin.isLoggedIn(request, response)) {
+           // Redirect back to login page
+           RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+           dispatcher.forward(request, response);
+           return;
+       }
+
       RequestDispatcher dispatcher = application.getRequestDispatcher("/masterstea.jsp");
       dispatcher.forward(request, response);
    }

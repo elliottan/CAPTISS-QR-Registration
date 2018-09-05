@@ -4,7 +4,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -72,21 +71,25 @@ public class Admin extends HttpServlet {
    }
 
    // Check if user is logged in
-   private void verifyLoggedIn(HttpServletRequest request, HttpServletResponse response)
+   public static boolean isLoggedIn(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
       if (request.getSession(false) == null
               || request.getSession(true).getAttribute("username") == null ) {
-         // Redirect back to login page
-         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-         dispatcher.forward(request, response);
-         return;
+         return false;
       }
+      return true;
    }
 
    // Method to handle POST method request.
    public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-      verifyLoggedIn(request, response);
+      // If user is not logged in, redirect to login page
+      if(!Admin.isLoggedIn(request, response)) {
+         // Redirect back to login page
+         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+         dispatcher.forward(request, response);
+         return;
+      }
 
       FileOutputStream fout = null;
 
@@ -133,7 +136,13 @@ public class Admin extends HttpServlet {
    // Method to handle GET method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-      verifyLoggedIn(request, response);
+      // If user is not logged in, redirect to login page
+      if(!Admin.isLoggedIn(request, response)) {
+         // Redirect back to login page
+         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+         dispatcher.forward(request, response);
+         return;
+      }
 
       // Redirect back to admin page
       RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");

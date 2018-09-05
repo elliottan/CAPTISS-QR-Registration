@@ -32,21 +32,17 @@ public class WalkIn extends HttpServlet {
       registrationTime = (ConcurrentHashMap<String, Date>)application.getAttribute("registrationtime");
    }
 
-   // Check if user is logged in
-   private void verifyLoggedIn(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-      if (request.getSession(false) == null
-              || request.getSession(true).getAttribute("username") == null ) {
+   // Method to handle POST method request.
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+      // If user is not logged in, redirect to login page
+      if(!Admin.isLoggedIn(request, response)) {
          // Redirect back to login page
          RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
          dispatcher.forward(request, response);
          return;
       }
-   }
 
-   // Method to handle POST method request.
-   public void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
       // Get parameters sent from walkin.jsp page
       String name = request.getParameter("name");
       String email = request.getParameter("email");
@@ -95,7 +91,13 @@ public class WalkIn extends HttpServlet {
    // Method to handle POST method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-      verifyLoggedIn(request, response);
+      // If user is not logged in, redirect to login page
+      if(!Admin.isLoggedIn(request, response)) {
+         // Redirect back to login page
+         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+         dispatcher.forward(request, response);
+         return;
+      }
 
       // Redirect to walk-in page
       RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
