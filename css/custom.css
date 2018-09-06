@@ -4,96 +4,18 @@
 .maincontent{
   background-color:#7C133A;
 }
-
 .headerlogo{
   width: 130px;
   margin-top: -15px;
 }
 .mainlogo{
-  width:80%;
+  width:100%;
   margin-bottom:30px;
   background-color:wheat;
   margin-top:30px;
   padding:30px;
   border: 3px solid gold;
   border-radius:10px;
-  margin-left:50px;
-}
-
-
-/* Global Button Styles */
-a.animated-button:link, a.animated-button:visited {
-  position: relative;
-  display: block;
-  margin: 20px auto 0;
-  padding: 14px 15px;
-  color: #fff;
-  font-size:14px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: .08em;
-  border-radius: 0;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-a.animated-button:link:after, a.animated-button:visited:after {
-  content: "";
-  position: absolute;
-  height: 0%;
-  left: 50%;
-  top: 50%;
-  width: 150%;
-  z-index: -1;
-  -webkit-transition: all 0.75s ease 0s;
-  -moz-transition: all 0.75s ease 0s;
-  -o-transition: all 0.75s ease 0s;
-  transition: all 0.75s ease 0s;
-}
-a.animated-button:link:hover, a.animated-button:visited:hover {
-  color: #FFF;
-  text-shadow: none;
-}
-a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
-  height: 450%;
-}
-a.animated-button:link, a.animated-button:visited {
-  position: relative;
-  display: block;
-  margin: 20px auto 0;
-  padding: 14px 15px;
-  color: #fff;
-  font-size:14px;
-  border-radius: 0;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: .08em;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-/* Victoria Buttons */
-
-a.animated-button.victoria-one {
-  border: 2px solid #D24D57;
-}
-a.animated-button.victoria-one:after {
-  background: #D24D57;
-  -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
-  -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
-  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
-  transform: translateX(-50%) translateY(-50%) rotate(-25deg);
 }
 input[type=text] {
   padding: 0;
@@ -105,11 +27,11 @@ input[type=text] {
   border-color: rgba(0,0,0,.15);
   background-color: white;
   font-size: 16px;
+  border-radius:5px;
 }
 .QRCODE{
   color: white;
   font-family: raleway;
-  display:inline-block;
 }
 .footer {
   position: fixed;
@@ -129,43 +51,47 @@ input[type=text] {
 .navbar{
   margin-bottom:8px !important;
 }
-html, body, {
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-}
-
 .hiddenbutton{
   display:none;
 }
-.h1{
-  font-family:raleway;
-  color:white;
-  font-size:20px;
-}
-@media screen and (min-width: 800px) {
-  .mainrow{
-    margin-right:-100px !important;
-    margin-top:30px;
-  }
-.requestrow body{
-  color:white !important;
+.requestrow{
   font-family:raleway !important;
-  margin-left:-60px !important;
-  width:100%;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  margin-top:0px;
+  color:white !important;
+  font-size:27px !important;
+  text-align:center;
+  margin-top:30px;
 }
-@media (min-width: 768px){
-  .navbar-nav {
-    float:right!important;
-  }
+.navbar-nav {
+  float:right!important;
 }
 .navbar-nav a{
   color:#7e1536 !important;
   font-size:17px;
   margin-right:20px;
+}
+.QR{
+  text-align:center;
+}
+h3{
+  display:inline !important;
+  font-size:34px !important;
+  color:#BC9C63 !important;
+  text-decoration:underline;
+  text-transform:uppercase;
+}
+.walkin{
+  text-align:center;
+  color:white!important;
+  font:raleway !important;
+}
+.submitbutton{
+  color:black!important;
+}
+.walkin input[type=text] {
+  margin:10px;
+}
+.walkinhead{
+  color:#BC9C63 !important;
+  font-weight:700;
+  font-size:32px;
 }
