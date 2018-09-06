@@ -159,3 +159,13 @@ html, body, {
   overflow-y:hidden;
   margin-top:0px;
 }
+@media (min-width: 768px){
+  .navbar-nav {
+    float:right!important;
+  }
+}
+.navbar-nav a{
+  color:#7e1536 !important;
+  font-size:17px;
+  margin-right:20px;
+}

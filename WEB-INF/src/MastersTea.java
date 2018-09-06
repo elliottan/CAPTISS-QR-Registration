@@ -44,9 +44,9 @@ public class MastersTea extends HttpServlet {
          ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
          if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
             registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
-            message = "Welcome, " + record.get("name") + "! You have been successfully registered.";
+            message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
          } else { // Already registered, do nothing
-            message = "Welcome back, " + record.get("name") + ", you have already been registered previously.";
+            message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
          }
       } else {
          // No record found

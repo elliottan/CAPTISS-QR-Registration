@@ -20,15 +20,10 @@
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Home</a></li> -->
-        <form action = "Admin" method = "GET">
-            <input type="submit" value="Admin" />
-        </form>
-        <form action = "WalkIn" method = "GET">
-            <input type="submit" value="Walk-In Registration" />
-        </form>
-        <form action = "Logout" method = "POST">
-            <input type="submit" value="Logout" />
-        </form>
+        <li><a href="admin.jsp">Admin</a></li>
+        <li><a href="walkin.jsp">WalkIn</a></li>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="Logout">Logout</a></li>
       </ul>
     </div>
   </nav>
