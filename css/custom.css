@@ -17,7 +17,7 @@
   border: 3px solid gold;
   border-radius:10px;
 }
-input[type=text] {
+input[type=text],input[type=password] {
   padding: 0;
   height: 30px;
   position: relative;
@@ -29,6 +29,7 @@ input[type=text] {
   font-size: 16px;
   border-radius:5px;
 }
+
 .QRCODE{
   color: white;
   font-family: raleway;
@@ -83,12 +84,18 @@ h3{
   text-align:center;
   color:white!important;
   font:raleway !important;
+  font-size:17px;
 }
 .submitbutton{
-  color:black!important;
+  background-color:transparent;
+  border:none;
+  text-transform:uppercase;
+  letter-spacing: .08em;
+  width:100%;
 }
-.walkin input[type=text] {
+.walkin input[type=text], input[type=password] {
   margin:10px;
+  color:black!important;
 }
 .walkinhead{
   color:#BC9C63 !important;

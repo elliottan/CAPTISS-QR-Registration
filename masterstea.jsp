@@ -22,6 +22,7 @@
                       </div>
                       <ul class="nav navbar-nav">
                         <li><a href="index.jsp">Home</a></li>
+                        <li><a href="masterstea.jsp">MastersTea</a></li>
                         <li><a href="admin.jsp">Admin</a></li>
                         <li><a href="walkin.jsp">WalkIn</a></li>
                         <li><a href="Logout">Logout</a></li>

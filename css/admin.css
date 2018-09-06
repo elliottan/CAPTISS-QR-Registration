@@ -1,0 +1,29 @@
+form {
+  display:inline-block;
+}
+h1{
+  color:white !important;
+  font-family:raleway !important;
+}
+.admintable{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admintable td,.admintable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.admintable tr:nth-child(odd){background-color: white;}
+.admintable tr:nth-child(even){background-color: #f2f2f2;}
+
+.admintable tr:hover {background-color: #ddd;}
+
+.admintable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #d3b171;
+    color: white;
+}
