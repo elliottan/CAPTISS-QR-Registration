@@ -34,12 +34,9 @@
   </nav>
   <div class="container">
       <div class="row mainrow">
-        <div class="col-md-6 poster">
-          <!-- In the file, just replace the image with the new
-          image called masterstea to change it -->
-          <img src = "images/masterstea.jpg" alt="" class="posterimg">
+
         </div>
-        <div class="col-md-6 col2">
+        <div class="col-md-8 col-md-offset-2">
           <img src = "images/mainlogo.png" alt="" class="mainlogo" >
 
           <div class="row">

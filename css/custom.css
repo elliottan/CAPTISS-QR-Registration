@@ -4,18 +4,13 @@
 .maincontent{
   background-color:#7C133A;
 }
-.posterimg{
-  width:100%;
-  border: 3px solid wheat;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
+
 .headerlogo{
   width: 130px;
   margin-top: -15px;
 }
 .mainlogo{
-  width:50%;
+  width:80%;
   margin-bottom:30px;
   background-color:wheat;
   margin-top:30px;
@@ -110,13 +105,11 @@ input[type=text] {
   border-color: rgba(0,0,0,.15);
   background-color: white;
   font-size: 16px;
-  width:30%;
 }
 .QRCODE{
   color: white;
   font-family: raleway;
   display:inline-block;
-  margin-left:30px;
 }
 .footer {
   position: fixed;
@@ -143,23 +136,7 @@ html, body, {
     left:0;
     right:0;
 }
-@media all and (max-width: 800px){
-  .poster{
-    display:none;
-  }
-  .mainlogo{
-    width:100% !important;
-  }
-  .QRcode{
-    margin-left:auto !important;
-    margin-right:auto !important;
-    margin-top:50px;
-  }
-}
-.col2{
-  margin-top:-30px;
-  padding-left:80px !important;
-}
+
 .hiddenbutton{
   display:none;
 }
