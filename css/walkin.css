@@ -22,6 +22,7 @@ margin-right:-5px;
 input[type=text], input[type=password]{
   width:200px !important;
   margin-right:-5px !important;
+  text-transform:uppercase;
 }
 .nametext{
   margin-left:60px !important;
