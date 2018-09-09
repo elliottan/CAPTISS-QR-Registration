@@ -2,10 +2,148 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf5b3697-ed87-4863-bca3-d07189f573b8" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/masterstea060918_attendance.xlsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/outputfiles/outputfile.csv" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/research_forum_150918/QR SCANNER LIST.xlsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/research_forum_150918/researchforum150918.csv" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/checkin.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/0106b335fb5c436297ae4a83091199bc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/010f4b8a97af429abae76bc910134ac5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/025e498f02304aff884d40d8b06ba1a5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/02b1a7ec56ed4b6991d5c96006118501.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/06ab2e02e2a24795998903871cbd6506.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/09802f1fb2b949dd8b9c6db513925e86.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/0a6b24291f3c4cd6a65883a8a971a2fa.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/117b8ea320b44c5c8eacb2869f6ffbf9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/193f913f94594552ac672afdbdaf8172.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/1a250315dee341ca8bea7e3c51b7fa32.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/1b69ee8d82d542a6ae978877da6366b6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/1e5b8c8b62ac40ddb123e310e194769f.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/218d3038a20c43e2b6b8d90eda9b15ad.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/227013bdeed340398cf5f2209b440b38.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/2603485b8ee649ca99610f64dad4c47b.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/272a4052a4d94c8eb5b427952fee4e71.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/290d7b6f897f4a0fbf8595d1bcec1c13.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/29867f07a68046098db50646d0ec703d.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/2a692b0261f44af3963088be95779f77.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/2bc6913eda704deb84492a41dcfbe2d2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/333c244f8a5d47c888a6ce04c8250411.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/335eae45ae0b4021bc412f5f2453c272.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/355fc6ca538a4ae8a66696f2ca911a7b.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/36dab837d4844d40855889d23e3c59e6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/395631691c024cc4a39da081b1e3c7cb.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/3a7b738d7610418e895490cfe28b85b8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/3b9d8387b983488fa32512a2c7767f44.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/3fb1b9349f5c43cea7fbd5fb9a158479.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/45068d2203f14a7b9d134d58a9ecbcd7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/4f98cc3a2c09428297efea7b10207415.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/4faca813089d4d8ca66bf0d6edd36273.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/54eb7a4704c1488986e9769a8cb4097d.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/54f2bbdf79fa47b98076b26ed99fc924.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/59670704e8714b59840a218aff11ca56.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/611fde70980a4d2ba2cca0b89b5568e7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/6459874b07fa4e08b0a881ffd6edcb24.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/658dbe252018440eaaad1706903b5850.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/68a38ab6c5594bf99a2b28a4d5d7f364.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/695ef65e46f849dd8771771a16565c0a.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/6abebd4afbf24f3bb94c971ab606699d.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/6dad9320a3e9455ea049845b4e9140dd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/72f485fb57f440319a47be9390ce9cb4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/7d034c3349fe4051990f18aa82689f2c.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/7ea3cf572bde42b58077de137f9688f7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/827877a18c6f4a7e85b6a63da41ef6a1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/82a27125c5a347429124c3558232ce6c.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/82aeec5976a643adb1886d1c28537430.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8463dcca2d784d63942ed414243724f8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/84b04fe3a69b46f49dde52b1d1065be7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/84b96081c66f4e89829d8d09820a6003.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/863a828c678b4dcc9c8b14266074d5e8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8a1b377d48964a019c7cae2d873e0f87.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8cd11dc6124041de80cf517c4c77c168.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8d4dd84d10bd49958b3284e2898de6bc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8dfe1ed95a3b484f90a55ffeb2799d27.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8e451c621b7146a9a6b2f45cc25f2bb1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8f29abbcd4654317a88af63aa847b751.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8f6aa8ba25e24f6da6a822ad20c68a33.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/8f7a5d7b44eb4f438eae483da4bba558.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/918a044ae3df432bbfe9f8389cf96731.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/934336d629c5438583bb6dabf3292b4b.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/959be314f77a4d409df50518aea35bc6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/97d5b2f3c61e41f3866952756f088ae7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/97fdd5d114e24f4db4993297c6902043.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/9b4a21d0e234413fb4587e7828198f1c.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/9de70f310cae41a3bb59d09a24547f82.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/9e620a51bb354161953852488768302c.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/9edea2222e5145968a5af0f53e6d285b.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/QRtest.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a1ff5669078e445480d5c27a8801f361.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a2b046aa4f4b40639ae9656ad1dcbd8d.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a2c218d0f69a4a59a8603d33dbbb42c9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a3a32eccbf584aa48aad2cacab07fae7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a5ff018a575f420c854c70094fab8f87.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a6fb94ceb19444398dae5dd61342fb54.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/a8f18cb14efe43df8d29978ddb06c926.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/aaca22a5c94346d69de46b593f2cc027.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/aba151218acd4769be28a4f9c54072f9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/abce2d8948cb4768b805bd41cf63b8db.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/ad258424133a48a6ab5ff846f52b2017.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/b13c0aa93a5e4c829524dc2485c3b6ae.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/b236287c37b64203813a318169bef36e.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/b4d844c438804c81a9e4ff36381490df.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/b92e6e7abce74cb7b4d41b8dc639a8d7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/ba0a72210cdb4fc19273a5af9dd203f4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/c051c909be7842fdb57dbc4af0b8f88a.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/c8bf6e4e76a8451e9272317967bdfe32.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/c8e93b8e7664443bbaa8a0ea15610175.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/c9afe9e98ad64822896c26145ccf449a.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/caeff43d79444bd88dd7c668d89346b4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/cdfae3f5a5e24f7095f4a8b0e79506dd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/cf4b346766514576aefa1b2de1587515.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/d095c547207d4bd29fbc4ddca0b26be9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/d38ad6cf8aef41089436237a59ea9cdf.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/d58a0adf8448413b9c59dcdfcc789d49.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/d667419a03ae4fb8b1197c5b84584dd7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/d97966b37dde4a16ba04171b63a4261e.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/da9278f769c4410d823a4437be19e982.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/dbb8bd748f554d41b191f51146a80723.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/dc44489e87ad43299a87727de9950974.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/de20de1d10f749598d33427474c8e7e6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/dffe4797a21f409e993ecee13c38f001.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e048e96ff93c425380ad75b46912b3f9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e16f0402ac05471b8db45247e8f149ec.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e1f7cfa6bc3f4fb79ac141805b85ea5d.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e46e8ca79ff04e479dcc8dfd784f75ea.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e5a5f95662f64815a00d4e7a279e83ea.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e63565687930448684fb62d4142d4107.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e6ab8a93d6a3469d91458420dec053b6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/e78f413151f440bcbe17d7df7aa85a53.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/ea49bcb4307c418abe53bb4f0c8eeea5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/edef13dff16a49269c99ed7d3f6314ef.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/f06c8504e6534b678c0512ea9f0cb4b8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/f28cdfb574b147b493fc85ce9f5ca9fa.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/f6088cb815534b68bec734b1d6930d79.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/f873774cfc6e45909bc1d403b0cd8a1f.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/fa4baa38a8a34a13bc4f960c4ae039a9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/ff9d2a07524f44eda524d71902e6005f.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/researchforum150918/ids.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/masterstea060918 - Copy.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/masterstea060918 - Copy.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/MastersTea.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/CheckIn.class" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/WalkIn.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/WalkIn.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/masterstea060918.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/masterstea060918.csv" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Admin.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Login.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Login.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/MastersTea.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" afterPath="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/admin.jsp" afterPath="$PROJECT_DIR$/admin.jsp" />
+      <change beforePath="$PROJECT_DIR$/index.jsp" afterPath="$PROJECT_DIR$/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/masterstea.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/walkin.jsp" afterPath="$PROJECT_DIR$/walkin.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,21 +155,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+            <state relative-caret-position="819">
+              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="masterstea.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/masterstea.jsp">
+      <file leaf-file-name="walkin.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/walkin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="483">
+              <caret line="23" column="61" lean-forward="false" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkin.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checkin.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -40,8 +188,8 @@
       <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="65" />
+            <state relative-caret-position="525">
+              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -50,8 +198,8 @@
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="98" column="47" lean-forward="false" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+            <state relative-caret-position="399">
+              <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -60,11 +208,9 @@
       <file leaf-file-name="WalkIn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkIn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-587">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,18 +218,18 @@
       <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+            <state relative-caret-position="252">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MastersTea.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/src/MastersTea.java">
+      <file leaf-file-name="CheckIn.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckIn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+            <state relative-caret-position="84">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,6 +250,9 @@
       <find>input</find>
       <find>formal</find>
       <find>\n</find>
+      <find>masterstea</find>
+      <find>/</find>
+      <find>jstl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,25 +280,26 @@
         <option value="$PROJECT_DIR$/WEB-INF/src/FormalDinner.java" />
         <option value="$PROJECT_DIR$/admin_formaldinner.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/Email.java" />
-        <option value="$PROJECT_DIR$/index.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/Logout.java" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/Login.java" />
         <option value="$PROJECT_DIR$/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/admin.jsp" />
-        <option value="$PROJECT_DIR$/walkin.jsp" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
         <option value="$PROJECT_DIR$/WEB-INF/src/MastersTea.java" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
         <option value="$PROJECT_DIR$/masterstea.jsp" />
         <option value="$PROJECT_DIR$/css/custom.css" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/Login.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
+        <option value="$PROJECT_DIR$/admin.jsp" />
+        <option value="$PROJECT_DIR$/checkin.jsp" />
+        <option value="$PROJECT_DIR$/walkin.jsp" />
+        <option value="$PROJECT_DIR$/index.jsp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="4" />
-    <option name="width" value="1400" />
-    <option name="height" value="990" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -169,7 +319,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,12 +357,12 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -349,7 +499,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -364,7 +513,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -376,7 +526,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -489,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="47" column="86" lean-forward="true" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -497,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -505,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,22 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/walkin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="77" lean-forward="false" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,56 +674,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-517">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/masterstea.jsp">
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        <state relative-caret-position="84">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-587">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="98" column="47" lean-forward="false" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+        <state relative-caret-position="399">
+          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/walkin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="61" lean-forward="false" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checkin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="65" />
+        <state relative-caret-position="525">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/MastersTea.java">
+    <entry file="file://$PROJECT_DIR$/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        <state relative-caret-position="819">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding />
         </state>
       </provider>

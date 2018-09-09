@@ -19,8 +19,8 @@
 
     <!-- Servlet mappings -->
     <servlet>
-        <servlet-name>MastersTea</servlet-name>
-        <servlet-class>MastersTea</servlet-class>
+        <servlet-name>CheckIn</servlet-name>
+        <servlet-class>CheckIn</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FormalDinner</servlet-name>
@@ -49,8 +49,8 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MastersTea</servlet-name>
-        <url-pattern>/MastersTea</url-pattern>
+        <servlet-name>CheckIn</servlet-name>
+        <url-pattern>/CheckIn</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FormalDinner</servlet-name>

@@ -18,93 +18,106 @@ import java.util.UUID;
  * Handle walk-in (on the spot) registration
  */
 public class WalkIn extends HttpServlet {
-   private String message;
-   private HashMap<String, HashMap<String, String>> allLines;
-   private ServletContext application;
-   private ConcurrentHashMap<String, Date> registrationTime;
+    private String message;
+    private HashMap<String, HashMap<String, String>> allLines;
+    private ServletContext application;
+    private ConcurrentHashMap<String, Date> registrationTime;
 
-   public void init() throws ServletException {
-      message = "";
-      application = getServletContext();  // Get context for logging purposes
+    public void init() throws ServletException {
+        message = "";
+        application = getServletContext();  // Get context for logging purposes
 
-      // Retrieve records already held on the server
-      allLines = (HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords");
-      registrationTime = (ConcurrentHashMap<String, Date>)application.getAttribute("registrationtime");
-   }
+        // Retrieve records already held on the server
+        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
+        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+    }
 
-   // Method to handle POST method request.
-   public void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-      // If user is not logged in, redirect to login page
-      if(!Admin.isLoggedIn(request, response)) {
-         // Redirect back to login page
-         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-         dispatcher.forward(request, response);
-         return;
-      }
+    // Method to handle POST method request.
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // If user is not logged in, redirect to login page
+        if (!Admin.isLoggedIn(request, response)) {
+            // Redirect back to login page
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
 
-      // Get parameters sent from walkin.jsp page
-      String name = request.getParameter("name");
-      String email = request.getParameter("email");
+        // Get parameters sent from walkin.jsp page
+        String title = request.getParameter("title");
+        String name = request.getParameter("name");
+        String org = request.getParameter("org");
+        // String email = request.getParameter("email");
+        switch (title) {
+            case "prof": title = "Prof"; break;
+            case "assocprof": title = "Assoc Prof"; break;
+            case "dr": title = "Dr"; break;
+            case "mr": title = "Mr"; break;
+            case "mrs": title = "Mrs"; break;
+            case "ms": title = "Ms"; break;
+            default: title = ""; break;
+        }
 
-      // ID, name, email, time-in
-      HashMap<String, String> newRecord = new HashMap<>();
-      String newUuid = UUID.randomUUID().toString(); // Generate walk-in QR code/ID
-      newRecord.put("id", newUuid);
-      newRecord.put("name", name.trim());
-      newRecord.put("email", email.trim());
+        HashMap<String, String> newRecord = new HashMap<>();
+        String newUuid = UUID.randomUUID().toString(); // Generate walk-in QR code/ID
+        newRecord.put("id", newUuid);
+        newRecord.put("name", name.trim());
+//      newRecord.put("email", email.trim());
+        newRecord.put("title", title);
+        newRecord.put("org", org.trim());
 
-      // Store in registration records, as well as registration time (attendance)
-      allLines.put(newUuid, newRecord);
-      if (!registrationTime.containsKey(newUuid)) {   // If haven't been registered previously
-         registrationTime.putIfAbsent(newUuid, new Date()); // Add registration record
-         message = "Welcome, " + newRecord.get("name") + "! You have been successfully registered.";
-      } else { // Already registered, do nothing
-         message = "Welcome back, " + newRecord.get("name") + ", you have already been registered previously.";
-      }
+        // Store in registration records, as well as registration time (attendance)
+        allLines.put(newUuid, newRecord);
+        if (!registrationTime.containsKey(newUuid)) {   // If haven't been registered previously
+            registrationTime.putIfAbsent(newUuid, new Date()); // Add registration record
+            message = "Welcome, <h3>" + newRecord.get("name") + "</h3>! You have been successfully registered.";
+        } else { // Already registered, do nothing
+            message = "Welcome back, <h3>" + newRecord.get("name") + "</h3>, you have already been registered previously.";
+        }
 
-      // Write to original input file
-      FileOutputStream fout = null;
-      try {
+        // Write to original input file
+        FileOutputStream fout = null;
+        try {
 //         File file = new File(application.getRealPath("WEB-INF\\files\\masters_tea_060918\\outputfile.csv"));
-         File file = new File(application.getRealPath("WEB-INF/files/masters_tea_060918/masterstea060918.csv"));
-         fout = new FileOutputStream(file, true);
-         fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
-         application.log("Successfully updated to input .csv file");
-      } catch (FileNotFoundException e) {
-         application.log("Error when trying to open file to write to (the file may be open), please try writing again");
-      } catch (Exception e) {
-         application.log("General exception thrown during file opening or writing, but not sure what it is");
-      } finally {
-         if (fout != null)
-            fout.close();
-      }
+            File file = new File(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"));
+            fout = new FileOutputStream(file, true);
+            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("title") + "," + newRecord.get("org") + "\n").getBytes()); // append to end of file
+//         fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
+            application.log("Successfully updated to input .csv file");
+        } catch (FileNotFoundException e) {
+            application.log("Error when trying to open file to write to (the file may be open), please try writing again");
+        } catch (Exception e) {
+            application.log("General exception thrown during file opening or writing, but not sure what it is");
+        } finally {
+            if (fout != null)
+                fout.close();
+        }
 
-      application.log("New walk-in registration: " + newUuid + ", " + newRecord.get("name"));
+        application.log("New walk-in registration: " + newUuid + ", " + newRecord.get("name"));
 
-      // Redirect back to check-in page
-      request.setAttribute("responsemessage", message);
-      RequestDispatcher dispatcher = application.getRequestDispatcher("/masterstea.jsp");
-      dispatcher.forward(request, response);
-   }
+        // Redirect back to check-in page
+        request.setAttribute("responsemessage", message);
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+        dispatcher.forward(request, response);
+    }
 
-   // Method to handle POST method request.
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-      // If user is not logged in, redirect to login page
-      if(!Admin.isLoggedIn(request, response)) {
-         // Redirect back to login page
-         RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-         dispatcher.forward(request, response);
-         return;
-      }
+    // Method to handle POST method request.
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // If user is not logged in, redirect to login page
+        if (!Admin.isLoggedIn(request, response)) {
+            // Redirect back to login page
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
 
-      // Redirect to walk-in page
-      RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
-      dispatcher.forward(request, response);
-   }
+        // Redirect to walk-in page
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
+        dispatcher.forward(request, response);
+    }
 
-   public void destroy() {
-      // do nothing.
-   }
+    public void destroy() {
+        // do nothing.
+    }
 }
