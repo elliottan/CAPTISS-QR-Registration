@@ -33,6 +33,7 @@ input[type=text],input[type=password] {
 .QRCODE{
   color: white;
   font-family: raleway;
+  font-size:20px !important;
 }
 .footer {
   position: fixed;

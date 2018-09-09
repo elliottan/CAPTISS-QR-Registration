@@ -23,9 +23,10 @@
             </div>
             <ul class="nav navbar-nav">
                <!-- <li><a href="index.jsp">Home</a></li> -->
+               <li><a href="captiss.jsp">CAPTISS</a></li>
                <li><a href="checkin.jsp">Register</a></li>
-               <li><a href="walkin.jsp">WalkIn</a></li>
                <li><a href="admin.jsp">Admin</a></li>
+               <li><a href="walkin.jsp">WalkIn</a></li>
                <li><a href="Logout">Logout</a></li>
             </ul>
          </div>
@@ -40,7 +41,7 @@
       <div class="container">
          <div class="row">
             <form action = "CheckIn" method = "POST" class="QR">
-            <p class="QRCODE">QR Code:</p>
+            <p class="QRCODE">Please Scan Your QR Code</p>
             <input type = "text" name = "qrcode" autofocus autocomplete="off">
             <input type = "submit" value = "Submit" / class="hiddenbutton">
          </div>
