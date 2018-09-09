@@ -1,0 +1,28 @@
+.select{
+padding: 0;
+height: 30px;
+position: relative;
+left: 0;
+outline: none;
+border: 1px solid #cdcdcd;
+border-color: rgba(0,0,0,.15);
+background-color: white;
+font-size: 16px;
+border-radius: 5px;
+margin:10px;
+width:200px;
+color:black;
+margin-left:28px;
+margin-right:-5px;
+}
+.walkin{
+  font-family:raleway !important;
+}
+
+input[type=text], input[type=password]{
+  width:200px !important;
+  margin-right:-5px !important;
+}
+.nametext{
+  margin-left:60px !important;
+}

@@ -3,6 +3,7 @@
       <title>Walk-In</title>
       <link rel="stylesheet" type="text/css" href="css/custom.css" >
       <link rel="stylesheet" type="text/css" href="css/button.css" >
+      <link rel="stylesheet" type="text/css" href="css/walkin.css" >
       <link rel="stylesheet" href="css/bootstrap.css">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +44,7 @@
                   <span class="walkinhead">Walk-In Registration</span>
                   <br />
                   Salutation:
-                  <select name = "title" autofocus>
+                  <select name = "title" class="select" autofocus>
                      <option value="prof">Prof</option>
                      <option value="assocprof">Assoc Prof</option>
                      <option value="dr">Dr</option>
@@ -53,7 +54,7 @@
                   </select>
                   <br />
                   Name:
-                  <input type = "text" name = "name" autocomplete="off">
+                  <input type = "text" name = "name" autocomplete="off" class="nametext">
                   <br />
                   Organization:
                   <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)">
