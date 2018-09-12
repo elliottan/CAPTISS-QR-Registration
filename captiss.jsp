@@ -38,7 +38,7 @@
                         <div class="col-md-4"></div>
                         <div class="col-md-6 qrstart">
 
-                        <form action = "MastersTea" method = "POST" class="QR">
+                        <form action = "CheckIn" method = "POST" class="QR">
                           <p class="QRCODE">QR Code.</p> <input type = "text" name = "qrcode" autofocus autocomplete="off">
                           <input type = "submit" value = "Submit" / class="hiddenbutton">
                         </div>
