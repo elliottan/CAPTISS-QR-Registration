@@ -21,20 +21,17 @@
                <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo"/></a>
             </div>
             <ul class="nav navbar-nav">
-               
+
             </ul>
          </div>
       </nav>
       <div class="container">
          <div class="row">
          </div>
-         <div class="col-md-8 col-md-offset-2">
-            <img src = "images/mainlogo.png" alt="" class="mainlogo" >
+         <div class="col-md-6">
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
          </div>
-      </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6 rightcol">
                <form action = "Login" method = "POST" class="walkin">
                   <span class="walkinhead">CAPTISS Admin Login</span>
                   <br />
@@ -47,12 +44,12 @@
                      <input type = "submit" value = "Submit" / class="submitbutton"></a>
                   </div>
                </form>
+
+                  <div class="requestrow request2" >
+                     ${requestScope["responsemessage"]}
+                  </div>
             </div>
-            <div class="col-md-4 col-md-offset-4">
-               <div class="row requestrow" >
-                  ${requestScope["responsemessage"]}
-               </div>
-            </div>
+
          </div>
       </div>
       </div>

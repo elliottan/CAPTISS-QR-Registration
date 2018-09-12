@@ -34,13 +34,10 @@
       <div class="container">
          <div class="row">
          </div>
-         <div class="col-md-8 col-md-offset-2">
-            <img src = "images/mainlogo.png" alt="" class="mainlogo" >
-         </div>
-      </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
+         <div class="col-md-6">
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
+            </div>
+            <div class="col-md-6 rightcol">
                <form action = "WalkIn" method = "POST" class="walkin">
                   <span class="walkinhead">Walk-In Registration</span>
                   <br />
@@ -58,7 +55,7 @@
                   <input type = "text" name = "name" autocomplete="off" class="nametext">
                   <br />
                   Organization:
-                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)">
+                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)" class="org">
                   <br />
                   <!-- Email: <input type = "text" name = "email" autocomplete="off">
                      <br /> -->

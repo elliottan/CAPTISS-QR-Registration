@@ -34,8 +34,8 @@
       <div class="container">
          <div class="row">
          </div>
-         <div class="col-md-8 col-md-offset-2">
-            <img src = "images/mainlogo.png" alt="" class="mainlogo" >
+         <div class="col-md-4 col-md-offset-4">
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
          </div>
       </div>
       <div class="container">
