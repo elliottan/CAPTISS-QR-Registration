@@ -61,7 +61,7 @@ input[type=text],input[type=password] {
   color:white !important;
   font-size:27px !important;
   text-align:center;
-  margin-top:30px;
+  margin-top:10px;
 }
 .navbar-nav {
   float:right!important;
@@ -95,11 +95,18 @@ h3{
   width:100%;
 }
 .walkin input[type=text], input[type=password] {
-  margin:10px;
+  margin:15px;
   color:black!important;
 }
 .walkinhead{
   color:#BC9C63 !important;
   font-weight:700;
-  font-size:32px;
+  font-size:36px;
+}
+.rightcol{
+  margin-top:150px;
+}
+
+.request2{
+  margin-top:100px;
 }
