@@ -25,6 +25,7 @@ public class Admin extends HttpServlet {
         // Do required initialization
         application = getServletContext();  // Get context for logging purposes
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
+        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 
         pullRecordsFromFile("WEB-INF/files/research_forum_150918/researchforum150918.csv",
                 new ArrayList<>() {{
@@ -167,7 +168,7 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -183,7 +184,7 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         dispatcher.forward(request, response);
     }
 

@@ -43,30 +43,19 @@
                <table border="3" class="admintable">
                   <tr>
                      <th>No</th>
-                     <th>Title</th>
                      <th>Name</th>
-                     <th>Organization</th>
                      <th>Email</th>
-                     <th>Lunch</th>
-                     <th>Afternoon Tea</th>
                      <th>Time-In</th>
                   </tr>
-                  <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
+                  <c:forEach items="${registrationrecords_masterstea.values()}" var="record" varStatus="status">
                      <tr>
                         <td>${record.get("id")}</td>
-                        <td>${record.get("title")}</td>
                         <td>${record.get("name")}</td>
-                        <td>${record.get("org")}</td>
                         <td>${record.get("email")}</td>
-                        <td>${record.get("lunch")}</td>
-                        <td>${record.get("tea")}</td>
                         <td>${registrationtime.get(record.get("id"))}</td>
                      </tr>
                   </c:forEach>
                </table>
-               <!-- <form action = "Email" method = "POST">
-                  <input type="submit" value="Send emails" />
-                  </form> -->
             </div>
          </div>
       </div>
