@@ -17,9 +17,6 @@ public class CheckIn extends HttpServlet {
 
     public void init() throws ServletException {
         application = getServletContext();  // Get context for logging purposes
-
-        // Retrieve records already held on the server
-        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
     }
 
     // Method to handle POST method request.
@@ -35,21 +32,30 @@ public class CheckIn extends HttpServlet {
 
         // Set response content type
         response.setContentType("text/html");
+
+        // Get qrcode input and find corresponding record
         message = request.getParameter("qrcode");
+
+        // Retrieve records already held on the server
+        ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
 
         // Get corresponding record based on qr code (id)
         HashMap<String, String> record = allLines.get(message);
-        message = "<h1>Error: no registration record found for QR code provided.</h1>"; // set default message
+        if (record == null) {
+            registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime_masterstea");
+            allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords_masterstea");
+            record = allLines.get(message);
+        }
+
+        message = "Error: no registration record found for QR code provided."; // set default message
         if (record != null) {   // Found record
-            ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
                 message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
             } else { // Already registered, do nothing
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
             }
-        } else {
-            // No record found
         }
 
         // Redirect to qrcode request page with welcome message

@@ -120,7 +120,7 @@
 //      }
 //
 //      // Redirect back to admin page
-//      RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+//      RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
 //      dispatcher.forward(request, response);
 //   }
 //

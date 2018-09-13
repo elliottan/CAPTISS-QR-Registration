@@ -28,8 +28,10 @@ public class WalkIn extends HttpServlet {
         application = getServletContext();  // Get context for logging purposes
 
         // Retrieve records already held on the server
-        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
-        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+//        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
+        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords_masterstea");
+//        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime_masterstea");
     }
 
     // Method to handle POST method request.
@@ -44,27 +46,41 @@ public class WalkIn extends HttpServlet {
         }
 
         // Get parameters sent from walkin.jsp page
-        String title = request.getParameter("title");
         String name = request.getParameter("name");
-        String org = request.getParameter("org");
-        // String email = request.getParameter("email");
-        switch (title) {
-            case "prof": title = "Prof"; break;
-            case "assocprof": title = "Assoc Prof"; break;
-            case "dr": title = "Dr"; break;
-            case "mr": title = "Mr"; break;
-            case "mrs": title = "Mrs"; break;
-            case "ms": title = "Ms"; break;
-            default: title = ""; break;
-        }
+//        String org = request.getParameter("org");
+        String email = request.getParameter("email");
+//        String title = request.getParameter("title");
+//        switch (title) {
+//            case "prof":
+//                title = "Prof";
+//                break;
+//            case "assocprof":
+//                title = "Assoc Prof";
+//                break;
+//            case "dr":
+//                title = "Dr";
+//                break;
+//            case "mr":
+//                title = "Mr";
+//                break;
+//            case "mrs":
+//                title = "Mrs";
+//                break;
+//            case "ms":
+//                title = "Ms";
+//                break;
+//            default:
+//                title = "";
+//                break;
+//        }
 
         HashMap<String, String> newRecord = new HashMap<>();
         String newUuid = UUID.randomUUID().toString(); // Generate walk-in QR code/ID
         newRecord.put("id", newUuid);
         newRecord.put("name", name.trim());
-//      newRecord.put("email", email.trim());
-        newRecord.put("title", title);
-        newRecord.put("org", org.trim());
+        newRecord.put("email", email.trim());
+//        newRecord.put("title", title);
+//        newRecord.put("org", org.trim());
 
         // Store in registration records, as well as registration time (attendance)
         allLines.put(newUuid, newRecord);
@@ -78,11 +94,11 @@ public class WalkIn extends HttpServlet {
         // Write to original input file
         FileOutputStream fout = null;
         try {
-//         File file = new File(application.getRealPath("WEB-INF\\files\\masters_tea_060918\\outputfile.csv"));
-            File file = new File(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"));
+//            File file = new File(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"));
+            File file = new File(application.getRealPath("WEB-INF/files/masters_tea_130918/masterstea130918.csv"));
             fout = new FileOutputStream(file, true);
-            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("title") + "," + newRecord.get("org") + "\n").getBytes()); // append to end of file
-//         fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
+//            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("title") + "," + newRecord.get("org") + "\n").getBytes()); // append to end of file
+            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
             application.log("Successfully updated to input .csv file");
         } catch (FileNotFoundException e) {
             application.log("Error when trying to open file to write to (the file may be open), please try writing again");

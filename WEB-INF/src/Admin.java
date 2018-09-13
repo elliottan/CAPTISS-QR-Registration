@@ -25,12 +25,9 @@ public class Admin extends HttpServlet {
         // Do required initialization
         application = getServletContext();  // Get context for logging purposes
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
+        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 
-        // Open registration file and parse the csv file of data (immediately when server starts up)
-        // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
-//      CSVUtils csvutils = new CSVUtils("C:\\apache-tomcat-9.0.10\\webapps\\captiss\\files\\masters_tea_060918\\masterstea0960918.csv",
-        application.log(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"));
-        CSVUtils csvutils = new CSVUtils(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"),
+        pullRecordsFromFile("WEB-INF/files/research_forum_150918/researchforum150918.csv",
                 new ArrayList<>() {{
                     add("id");
                     add("name");
@@ -41,19 +38,54 @@ public class Admin extends HttpServlet {
                     add("tea");
                     add("imgpath");
                     add("imgurl");
-                }}, 1);
-//      new ArrayList<>() {{add("id"); add("name"); add("email");}}, 1);
-        HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
-        application.setAttribute("registrationrecords", allLines); // Store in server application for all to access
-        application.log("Successfully pulled registration records from file");
+                }}, "registrationrecords");
 
-        // Pull existing attendance records
-        csvutils = new CSVUtils(application.getRealPath("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv"),
+        pullExistingAttendanceRecordsFromFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv",
                 new ArrayList<>() {{
                     add("id");
                     add("timein");
-                }}, 1);
-        allLines = csvutils.getLines();    // Get array of all the data
+                }}, "registrationtime");
+
+        pullRecordsFromFile("WEB-INF/files/masters_tea_130918/masterstea130918.csv",
+                new ArrayList<>() {{
+                    add("id");
+                    add("name");
+                    add("email");
+                    add("imgpath");
+                    add("imgurl");
+                }}, "registrationrecords_masterstea");
+
+        pullExistingAttendanceRecordsFromFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv",
+                new ArrayList<>() {{
+                    add("id");
+                    add("timein");
+                }}, "registrationtime_masterstea");
+
+        // Get web server's current IP address and store it as an application variable
+        application.setAttribute("ipaddress", "<unknown>");
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            application.setAttribute("ipaddress", ip.getHostAddress());
+            application.log("Current IP address : " + ip.getHostAddress());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void pullRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) {
+        // Open registration file and parse the csv file of data (immediately when server starts up)
+        // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
+        application.log(application.getRealPath(filePath));
+        CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
+        HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
+        application.setAttribute(appAttributeName, allLines); // Store in server application for all to access
+        application.log("Successfully pulled registration records from file");
+    }
+
+    private void pullExistingAttendanceRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) {
+        // Pull existing attendance records
+        CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
+        HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
         if (!allLines.isEmpty()) { // Check if the file has contents
             ConcurrentHashMap<String, Date> registrationtime = new ConcurrentHashMap<>();
             for (String key : allLines.keySet()) {
@@ -69,18 +101,8 @@ public class Admin extends HttpServlet {
                         registrationtime.put(record.get("id"), timein);
                 }
             }
-            application.setAttribute("registrationtime", registrationtime);
+            application.setAttribute(appAttributeName, registrationtime);
             application.log("Successfully pulled previous attendance records from file");
-        }
-
-        // Get web server's current IP address and store it as an application variable
-        application.setAttribute("ipaddress", "<unknown>");
-        try {
-            InetAddress ip = InetAddress.getLocalHost();
-            application.setAttribute("ipaddress", ip.getHostAddress());
-            application.log("Current IP address : " + ip.getHostAddress());
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         }
     }
 
@@ -94,29 +116,17 @@ public class Admin extends HttpServlet {
         return true;
     }
 
-    // Method to handle POST method request.
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // If user is not logged in, redirect to login page
-        if (!Admin.isLoggedIn(request, response)) {
-            // Redirect back to login page
-            RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
-            dispatcher.forward(request, response);
-            return;
-        }
-
+    private void backupToFile(String filePath, String appAttributeName) throws IOException {
         FileOutputStream fout = null;
 
         // Back up the data to the file
         try {
-//         File file = new File(application.getRealPath("WEB-INF\\files\\masters_tea_060918\\outputfile.csv"));
-            File file = new File(application.getRealPath("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv"));
-//                 + fileNameFormatter.format(new Date()) + ".csv"));
+            File file = new File(application.getRealPath(filePath));
             file.createNewFile();
             fout = new FileOutputStream(file);
             fout.write("ID,TimeIn\n".getBytes()); // Write header lines
             ConcurrentHashMap<String, Date> registrationtime =
-                    (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+                    (ConcurrentHashMap<String, Date>) application.getAttribute(appAttributeName);
             for (String key : registrationtime.keySet()) {  // Write data
                 Date time = registrationtime.getOrDefault(key, null);
                 if (time != null)
@@ -132,6 +142,21 @@ public class Admin extends HttpServlet {
             if (fout != null)
                 fout.close();
         }
+    }
+
+    // Method to handle POST method request.
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // If user is not logged in, redirect to login page
+        if (!Admin.isLoggedIn(request, response)) {
+            // Redirect back to login page
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
+
+//        backupToFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv", "registrationtime");
+        backupToFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv", "registrationtime_masterstea");
 
         // Update IP address
         try {
@@ -143,6 +168,7 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
@@ -160,6 +186,7 @@ public class Admin extends HttpServlet {
 
         // Redirect back to admin page
         RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         dispatcher.forward(request, response);
     }
 
