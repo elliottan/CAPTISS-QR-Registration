@@ -93,6 +93,8 @@ h3{
   text-transform:uppercase;
   letter-spacing: .08em;
   width:100%;
+  margin:-20px;
+  padding:20px;
 }
 .walkin input[type=text], input[type=password] {
   margin:15px;

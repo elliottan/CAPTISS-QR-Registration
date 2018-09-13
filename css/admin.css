@@ -9,6 +9,7 @@ h1{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-bottom:50px;
 }
 
 .admintable td,.admintable th {
@@ -26,4 +27,7 @@ h1{
     text-align: left;
     background-color: #d3b171;
     color: white;
+}
+.submitbutton{
+  width:120%;
 }
