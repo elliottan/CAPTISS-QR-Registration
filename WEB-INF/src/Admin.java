@@ -155,7 +155,7 @@ public class Admin extends HttpServlet {
             return;
         }
 
-        backupToFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv", "registrationtime");
+//        backupToFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv", "registrationtime");
         backupToFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv", "registrationtime_masterstea");
 
         // Update IP address
@@ -168,7 +168,8 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -184,7 +185,8 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         dispatcher.forward(request, response);
     }
 
