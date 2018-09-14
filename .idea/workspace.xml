@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf5b3697-ed87-4863-bca3-d07189f573b8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/classes/CheckInResearchForum.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/classes/WalkInResearchForum.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/captiss_220918/CAPTISS 2018 Attendees Namelist v9 (FINAL) (1).xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_130918/masterstea130918 attendance.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/checkin_researchforum.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/w3.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/header_navbar.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/tableFilter.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/w3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/walkin_researchforum.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$4.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Logout.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Logout.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/masters_tea_130918/masterstea130918.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_130918/masterstea130918.csv" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/masterstea300818attendance.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_300818/masterstea300818attendance.csv" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/CheckInResearchForum.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/CheckInResearchForum.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/files/research_forum_150918/researchforum150918.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/research_forum_150918/researchforum150918.csv" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/welcomedinner310818attendance.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/welcome_dinner_310818/welcomedinner310818attendance.csv" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/src/Admin.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Logout.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Logout.java" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/admin.jsp" afterPath="$PROJECT_DIR$/admin.jsp" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" afterPath="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" />
       <change beforePath="$PROJECT_DIR$/admin_researchforum.jsp" afterPath="$PROJECT_DIR$/admin_researchforum.jsp" />
-      <change beforePath="$PROJECT_DIR$/header.jsp" afterPath="$PROJECT_DIR$/header.jsp" />
-      <change beforePath="$PROJECT_DIR$/index.jsp" afterPath="$PROJECT_DIR$/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/walkin.jsp" afterPath="$PROJECT_DIR$/walkin.jsp" />
+      <change beforePath="$PROJECT_DIR$/checkin_researchforum.jsp" afterPath="$PROJECT_DIR$/checkin_researchforum.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +26,8 @@
       <file leaf-file-name="walkin_researchforum.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/walkin_researchforum.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            <state relative-caret-position="0">
+              <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -58,8 +36,8 @@
       <file leaf-file-name="checkin_researchforum.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checkin_researchforum.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+            <state relative-caret-position="483">
+              <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -68,8 +46,8 @@
       <file leaf-file-name="admin_researchforum.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin_researchforum.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="61" column="103" lean-forward="true" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
+            <state relative-caret-position="525">
+              <caret line="62" column="128" lean-forward="false" selection-start-line="62" selection-start-column="128" selection-end-line="62" selection-end-column="128" />
               <folding />
             </state>
           </provider>
@@ -88,8 +66,8 @@
       <file leaf-file-name="CheckInResearchForum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="231">
+              <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -98,9 +76,12 @@
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="820">
+              <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+              <folding>
+                <element signature="e#6216#6217#0" expanded="true" />
+                <element signature="e#6290#6291#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,7 +148,6 @@
         <option value="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" />
         <option value="$PROJECT_DIR$/css/walkin.css" />
         <option value="$PROJECT_DIR$/walkin.jsp" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" />
         <option value="$PROJECT_DIR$/WEB-INF/src/Logout.java" />
         <option value="$PROJECT_DIR$/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/header.jsp" />
@@ -175,9 +155,10 @@
         <option value="$PROJECT_DIR$/header_navbar.jsp" />
         <option value="$PROJECT_DIR$/index.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
         <option value="$PROJECT_DIR$/admin.jsp" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" />
         <option value="$PROJECT_DIR$/checkin_researchforum.jsp" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
         <option value="$PROJECT_DIR$/admin_researchforum.jsp" />
       </list>
     </option>
@@ -625,38 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/walkin_researchforum.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header_navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -673,18 +622,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+          <folding>
+            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6290#6291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/checkin_researchforum.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="483">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/walkin_researchforum.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header_navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_researchforum.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="61" column="103" lean-forward="true" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
+        <state relative-caret-position="525">
+          <caret line="62" column="128" lean-forward="false" selection-start-line="62" selection-start-column="128" selection-end-line="62" selection-end-column="128" />
           <folding />
         </state>
       </provider>

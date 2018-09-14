@@ -27,6 +27,7 @@
       <div class="container">
          <div class="row">
             <form action = "CheckInResearchForum" method = "POST" class="QR">
+            <input type="hidden" name="jsppage" value="/checkin_researchforum.jsp">
             <p class="QRCODE">Please Scan Your QR Code</p>
             <input type = "text" name = "qrcode" autofocus autocomplete="off">
             <input type = "submit" value = "Submit" class="hiddenbutton" />

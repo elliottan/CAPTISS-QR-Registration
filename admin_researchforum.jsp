@@ -25,12 +25,14 @@
             <div class="col-md-12">
                <h1>Research Forum Registration List</h1>
                <form action = "Admin" method = "POST">
+                  <input type="hidden" name="jsppage" value="/admin_researchforum.jsp">
                   <a href="#" class="btn btn-sm animated-button victoria-one ">
                   <input type = "submit" value = "Refresh and backup" class="submitbutton" /></a>
                </form>
 
                <!-- Filter by names -->
                <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for name..." id="nameFilterInput" onkeyup="sortTableByName()">
+               <br />
 
                <table border="3" class="admintable" id="myTable">
                   <tr>

@@ -36,15 +36,18 @@ public class CheckInResearchForum extends HttpServlet {
         // Get qrcode input and find corresponding record
         message = request.getParameter("qrcode");
 
-        // Retrieve records already held on the server
-        ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
-        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
+        HashMap<String, String> record = null;
+        if (message != null && !message.trim().isEmpty()) {
+            allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
 
-        // Get corresponding record based on qr code (id)
-        HashMap<String, String> record = allLines.get(message);
+            // Get corresponding record based on qr code (id)
+            record = allLines.get(message.trim());
+        }
 
         message = "Error: no registration record found for QR code provided."; // set default message
         if (record != null) {   // Found record
+            // Retrieve records already held on the server
+            ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
                 message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
@@ -52,11 +55,19 @@ public class CheckInResearchForum extends HttpServlet {
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
             }
         }
-
-        // Redirect to qrcode request page with welcome message
         request.setAttribute("responsemessage", message);
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
-        dispatcher.forward(request, response);
+
+        // Update registration conter, and back up files if necessary
+        application.log("" + Admin.updateRegistrationCount());
+        if (Admin.isTimeToBackup()) {
+            application.log("time to backup");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
+            dispatcher.forward(request, response);
+        } else {
+            // Redirect to qrcode request page with welcome message
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     // Method to handle GET method request.

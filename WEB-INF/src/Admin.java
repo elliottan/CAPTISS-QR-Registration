@@ -23,6 +23,8 @@ public class Admin extends HttpServlet {
 
     public static String fileFolder = "research_forum_150918";
     public static String fileName = "researchforum150918.csv";
+    public static int registrationCount = 0; // Count how many people have been registered
+    private static int registrationCountThreshold = 5; // No of registrations before backing up
 
     public void init() throws ServletException {
         // Do required initialization
@@ -119,6 +121,16 @@ public class Admin extends HttpServlet {
         return true;
     }
 
+    // Increment registration count
+    public static int updateRegistrationCount() {
+        registrationCount = (registrationCount + 1) % registrationCountThreshold;
+        return registrationCount;
+    }
+
+    public static boolean isTimeToBackup() {
+        return registrationCount == registrationCountThreshold - 1;
+    }
+
     private void backupToFile(String filePath, String appAttributeName) throws IOException {
         FileOutputStream fout = null;
 
@@ -170,8 +182,14 @@ public class Admin extends HttpServlet {
             e.printStackTrace();
         }
 
+        String prevPage = (String)request.getParameter("jsppage");
+        if (prevPage == null || prevPage.trim().isEmpty())
+            prevPage = "/admin_researchforum.jsp";
+//        application.log(prevPage);
+
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher(prevPage);
 //        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
