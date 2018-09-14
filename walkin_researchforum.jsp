@@ -1,8 +1,9 @@
 <html>
    <head>
-      <title>Home</title>
+      <title>Walk-In</title>
       <link rel="stylesheet" type="text/css" href="css/custom.css" >
       <link rel="stylesheet" type="text/css" href="css/button.css" >
+      <link rel="stylesheet" type="text/css" href="css/walkin.css" >
       <link rel="stylesheet" href="css/bootstrap.css">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,44 +13,47 @@
       <link rel="shortcut icon" href="https://captlife.com/wp-content/uploads/2017/12/cropped-CAPT_Logo_Vertical-32x32.png">
 
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-      <c:if test="${!empty sessionScope.username}"><c:redirect url="admin_researchforum.jsp" /></c:if>
+      <c:if test="${empty sessionScope.username}"><c:redirect url="index.jsp" /></c:if>
    </head>
    <body class="maincontent">
-      <nav class="navbar navbar-default">
-         <div class="container-fluid">
-            <div class="navbar-header">
-               <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo"/></a>
-            </div>
-            <ul class="nav navbar-nav">
-
-            </ul>
-         </div>
-      </nav>
+      <jsp:include page="header_navbar.jsp" />
       <div class="container">
          <div class="row">
          </div>
          <div class="col-md-6">
             <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
-         </div>
+            </div>
             <div class="col-md-6 rightcol">
-               <form action = "Login" method = "POST" class="walkin">
-                  <span class="walkinhead">CAPTISS Admin Login</span>
+               <form action = "WalkInResearchForum" method = "POST" class="walkin">
+                  <span class="walkinhead">Walk-In Registration</span>
                   <br />
-                  Username:<input type = "text" name = "username" autofocus>
+                  Salutation:
+                  <select name = "title" class="select" autofocus>
+                     <option value="prof">Prof</option>
+                     <option value="assocprof">Assoc Prof</option>
+                     <option value="dr">Dr</option>
+                     <option value="mr">Mr</option>
+                     <option value="mrs">Mrs</option>
+                     <option value="ms">Ms</option>
+                  </select>
                   <br />
-                  Password: <input type = "password" name = "password" autocomplete="off">
+                  Name:
+                  <input type = "text" name = "name" autocomplete="off" autofocus class="nametext">
+                  <br />
+                  Organization:
+                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)" class="org">
                   <br />
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">
                      <input type = "submit" value = "Submit" / class="submitbutton"></a>
                   </div>
                </form>
-
-                  <div class="requestrow request2" >
-                     ${requestScope["responsemessage"]}
-                  </div>
             </div>
-
+            <div class="col-md-4 col-md-offset-4">
+               <div class="row requestrow" >
+                  ${requestScope["responsemessage"]}
+               </div>
+            </div>
          </div>
       </div>
       </div>

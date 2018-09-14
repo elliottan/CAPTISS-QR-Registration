@@ -47,6 +47,14 @@
         <servlet-name>WalkIn</servlet-name>
         <servlet-class>WalkIn</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>WalkInResearchForum</servlet-name>
+        <servlet-class>WalkInResearchForum</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckInResearchForum</servlet-name>
+        <servlet-class>CheckInResearchForum</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>CheckIn</servlet-name>
@@ -75,6 +83,14 @@
     <servlet-mapping>
         <servlet-name>WalkIn</servlet-name>
         <url-pattern>/WalkIn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WalkInResearchForum</servlet-name>
+        <url-pattern>/WalkInResearchForum</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckInResearchForum</servlet-name>
+        <url-pattern>/CheckInResearchForum</url-pattern>
     </servlet-mapping>
 
 </web-app>

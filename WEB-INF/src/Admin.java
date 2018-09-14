@@ -21,13 +21,16 @@ public class Admin extends HttpServlet {
     private ServletContext application; // Get context for logging purposes
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
 
+    public static String fileFolder = "research_forum_150918";
+    public static String fileName = "researchforum150918.csv";
+
     public void init() throws ServletException {
         // Do required initialization
         application = getServletContext();  // Get context for logging purposes
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
-        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
+//        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 
-        pullRecordsFromFile("WEB-INF/files/research_forum_150918/researchforum150918.csv",
+        pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
                 new ArrayList<>() {{
                     add("id");
                     add("name");
@@ -40,26 +43,26 @@ public class Admin extends HttpServlet {
                     add("imgurl");
                 }}, "registrationrecords");
 
-        pullExistingAttendanceRecordsFromFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv",
+        pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv",
                 new ArrayList<>() {{
                     add("id");
                     add("timein");
                 }}, "registrationtime");
 
-        pullRecordsFromFile("WEB-INF/files/masters_tea_130918/masterstea130918.csv",
-                new ArrayList<>() {{
-                    add("id");
-                    add("name");
-                    add("email");
-                    add("imgpath");
-                    add("imgurl");
-                }}, "registrationrecords_masterstea");
-
-        pullExistingAttendanceRecordsFromFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv",
-                new ArrayList<>() {{
-                    add("id");
-                    add("timein");
-                }}, "registrationtime_masterstea");
+//        pullRecordsFromFile("WEB-INF/files/masters_tea_130918/masterstea130918.csv",
+//                new ArrayList<>() {{
+//                    add("id");
+//                    add("name");
+//                    add("email");
+//                    add("imgpath");
+//                    add("imgurl");
+//                }}, "registrationrecords_masterstea");
+//
+//        pullExistingAttendanceRecordsFromFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv",
+//                new ArrayList<>() {{
+//                    add("id");
+//                    add("timein");
+//                }}, "registrationtime_masterstea");
 
         // Get web server's current IP address and store it as an application variable
         application.setAttribute("ipaddress", "<unknown>");
@@ -155,8 +158,8 @@ public class Admin extends HttpServlet {
             return;
         }
 
-//        backupToFile("WEB-INF/files/research_forum_150918/outputfiles/outputfile.csv", "registrationtime");
-        backupToFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv", "registrationtime_masterstea");
+        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv", "registrationtime");
+//        backupToFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv", "registrationtime_masterstea");
 
         // Update IP address
         try {
@@ -168,8 +171,8 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -185,8 +188,8 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         dispatcher.forward(request, response);
     }
 

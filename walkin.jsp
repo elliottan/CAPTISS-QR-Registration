@@ -58,7 +58,7 @@
                   <!-- Organization:
                   <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)" class="org">
                   <br /> -->
-                  NUSNet-ID: <input type = "text" name = "email" autocomplete="off">
+                  NUSNet ID: <input type = "text" name = "email" autocomplete="off" placeholder="E1234567">
                   <br />
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">

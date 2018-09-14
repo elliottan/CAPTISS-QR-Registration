@@ -27,7 +27,7 @@ public class Logout extends HttpServlet {
       session.invalidate();
 
       // Logged out, edirect to login page
-      request.setAttribute("responsemessage", "You have successfully logged out");
+      request.setAttribute("responsemessage", "You have successfully logged out.");
       RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
       dispatcher.forward(request, response);
    }
