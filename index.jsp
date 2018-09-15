@@ -37,7 +37,7 @@
                   <br />
                   Username:<input type = "text" name = "username" autofocus>
                   <br />
-                  Password: <input type = "password" name = "password" autocomplete="off">
+                  Password: <input type = "password" name = "password" autocomplete="off" class="pw">
                   <br />
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">
