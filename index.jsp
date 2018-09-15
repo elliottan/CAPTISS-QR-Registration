@@ -45,7 +45,7 @@
                   </div>
                </form>
 
-                  <div class="requestrow request2" >
+                  <div class="requestrow request2 loginresponse" >
                      ${requestScope["responsemessage"]}
                   </div>
             </div>
