@@ -18,7 +18,7 @@
       <nav class="navbar navbar-default">
          <div class="container-fluid">
             <div class="navbar-header">
-               <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo"/></a>
+               <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo loginlogout"/></a>
             </div>
             <ul class="nav navbar-nav">
 
