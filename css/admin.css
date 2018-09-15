@@ -17,6 +17,9 @@ h1{
 .admintable td,.admintable th {
     border: 1px solid #ddd;
     padding: 8px;
+    overflow-wrap:break-word;
+    max-width:100px;
+    font-size:small;
 }
 .admintable tr:nth-child(odd){background-color: white;}
 .admintable tr:nth-child(even){background-color: #f2f2f2;}
