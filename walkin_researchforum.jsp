@@ -21,7 +21,7 @@
          <div class="row">
          </div>
          <div class="col-md-6">
-            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo walkinresearch" >
             </div>
             <div class="col-md-6 rightcol">
                <form action = "WalkInResearchForum" method = "POST" class="walkin">

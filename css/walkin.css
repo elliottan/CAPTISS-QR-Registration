@@ -10,7 +10,6 @@ background-color: white;
 font-size: 16px;
 border-radius: 5px;
 margin:15px;
-width:250px;
 color:black;
 margin-left:28px;
 margin-right:-5px;
@@ -19,15 +18,34 @@ margin-right:-5px;
   font-family:raleway !important;
 }
 
-input[type=text], input[type=password]{
-  width:250px !important;
-  margin-right:-5px !important;
-  /* text-transform:uppercase; */
-  margin:15px;
-}
+
 .nametext{
   margin-left:60px !important;
 }
 .org{
   margin-left:10px! important;
+}
+@media screen and (min-width: 800px) {
+  input[type=text], input[type=password]{
+    width:250px !important;
+    margin-right:-5px !important;
+    /* text-transform:uppercase; */
+    margin:15px;
+  }
+  .select{
+    width:250px;
+  }
+}
+
+@media all and (max-width: 600px){
+  input[type=text], input[type=password]{
+    margin-right:-5px !important;
+  }
+  .select{
+    width:180px;
+  }
+  .mainlogo{
+    width:60%;
+    margin-left:20%;
+  }
 }

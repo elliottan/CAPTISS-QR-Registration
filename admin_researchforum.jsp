@@ -59,9 +59,9 @@
                             <c:choose>
                                 <c:when test="${empty registrationtime.get(record.get(\"id\"))}">
                                     <form action = "CheckInResearchForum" method = "POST">
-                                        <a href="#" class="btn btn-sm animated-button victoria-one ">
+                                        <a href="#" class="btn">
                                             <input type="text" name="qrcode" style="display:none" value="${record.get('id')}" />
-                                            <input type="submit" value="Manual" class="submitbutton" />
+                                            <input type="submit" value="Manual" class="adminbutton" />
                                         </a>
                                     </form>
                                 </c:when>

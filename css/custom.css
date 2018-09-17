@@ -5,11 +5,9 @@
   background-color:#7C133A;
 }
 .headerlogo{
-  width: 130px;
-  margin-top: -15px;
+  width: 135px;
 }
 .mainlogo{
-  width:100%;
   margin-bottom:30px;
   background-color:wheat;
   margin-top:30px;
@@ -76,7 +74,7 @@ input[type=text],input[type=password] {
 }
 h3{
   display:inline !important;
-  font-size:34px !important;
+  font-size:37px !important;
   color:#BC9C63 !important;
   text-decoration:underline;
   text-transform:uppercase;
@@ -103,10 +101,49 @@ h3{
 .walkinhead{
   color:#BC9C63 !important;
   font-weight:700;
-  font-size:36px;
 }
-.rightcol{
-  margin-top:150px;
+.headerlogo{
+  margin-top: -15px;
+}
+@media screen and (min-width: 800px) {
+  .rightcol{
+    margin-top:100px;
+  }
+  .walkinhead{
+    font-size:36px;
+  }
+  .mainlogo{
+    width:80%;
+    margin-left:10%;
+  }
+
+  .walkinresearch{
+    width:60% !important;
+    margin-left:20% !important;
+    padding:15px!important;
+  }
+}
+@media all and (max-width: 600px){
+  .walkinhead{
+    font-size:26px;
+  }
+  .mainlogo{
+    width:70%;
+    margin-left:15%;
+  }
+  .requestrow{
+    margin:0px!important;
+  }
+  .loginlogout{
+    margin-top:-10px !important;
+  }
+  .loginresponse{
+    font-size:16px !important;
+    margin-top:-10px !important;
+  }
+  .pw{
+    margin-left:14px !important;
+  }
 }
 
 .request2{
