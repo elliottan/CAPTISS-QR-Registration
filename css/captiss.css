@@ -1,9 +1,18 @@
-body{
-  background-image:url(../images/captissbg.png);
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-color:black;
-  background-position:center;
+@media screen and (min-width: 800px) {
+
+  body{
+    background-image:url(../images/captissbg2.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-color:black;
+    background-position:right;
+  }
+  .requestrow{
+    margin-top:5%;
+  }
+  .captisslogo{
+    display:none;
+  }
 }
 .qrstart{
   margin-top:67px;
@@ -14,15 +23,20 @@ body{
 .maincontent{
   background-color:black !important;
 }
-.nav{
-  padding:10px;
-}
-.headerlogo{
-  margin-top:0px !important;
-}
 .qrcode{
   color:#FCC31E;
   text-transform:uppercase;
   font-size:22px;
   font-weight:650;
+}
+@media all and (max-width: 600px){
+  .requestrow{
+    margin-top:10% !important;
+  }
+  .captisslogo{
+    width:40%;
+    margin-left:30%;
+    margin-top:15%;
+    margin-bottom:-5%;
+  }
 }

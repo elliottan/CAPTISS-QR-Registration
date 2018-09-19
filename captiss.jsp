@@ -16,19 +16,13 @@
                 </head>
 
                 <body class="maincontent">
-                  <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                      <div class="navbar-header">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/captisslogo.png" class = "headerlogo"/></a>
-                      </div>
-                      <jsp:include page="header_navbar.jsp" />
-                    </div>
-                  </nav>
+                   <jsp:include page="header_navbar.jsp" />
 
                     <div class="container">
 
                       <div class="row">
-                        <div class="col-md-4"></div>
+                        <img src="images/captisslogo.png" class="captisslogo"/>
+                        <div class="col-md-3"></div>
                         <div class="col-md-6 qrstart">
 
                         <form action = "CheckIn" method = "POST" class="QR">
@@ -36,10 +30,15 @@
                           <p class="QRCODE">QR Code.</p> <input type = "text" name = "qrcode" autofocus autocomplete="off">
                           <input type = "submit" value = "Submit" / class="hiddenbutton">
                         </div>
+                      </div>
+                      <div class= "container">
                         <div class="row requestrow" >
+                          <div class="col-md-8">
                           ${requestScope["responsemessage"]}
                         </div>
+                        </div>
                       </div>
+                    </div>
                     </div>
                     </div>
                   </div>
