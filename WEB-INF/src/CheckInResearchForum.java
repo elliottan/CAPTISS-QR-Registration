@@ -55,6 +55,7 @@ public class CheckInResearchForum extends HttpServlet {
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
             }
         }
+        
         request.setAttribute("responsemessage", message);
 
         // Update registration conter, and back up files if necessary

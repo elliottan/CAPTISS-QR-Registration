@@ -16,27 +16,12 @@
       <c:if test="${empty sessionScope.username}"><c:redirect url="index.jsp" /></c:if>
    </head>
    <body class="maincontent">
-      <nav class="navbar navbar-default">
-         <div class="container-fluid">
-            <div class="navbar-header">
-               <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo"/></a>
-            </div>
-            <ul class="nav navbar-nav">
-               <!-- <li><a href="index.jsp">Home</a></li>
-               <li><a href="captiss.jsp">CAPTISS</a></li>
-               <li><a href="checkin.jsp">Register</a></li>
-               <li><a href="walkin.jsp">WalkIn</a></li>
-               <li><a href="admin.jsp">Admin</a></li>
-               <li><a href="Logout">Logout</a></li> -->
-               <jsp:include page="header.jsp" />
-            </ul>
-         </div>
-      </nav>
+      <jsp:include page="header_navbar.jsp" />
       <div class="container">
          <div class="row">
          </div>
          <div class="col-md-6">
-            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo walkinresearch" >
             </div>
             <div class="col-md-6 rightcol">
                <form action = "WalkIn" method = "POST" class="walkin">
@@ -55,10 +40,8 @@
                   Name:
                   <input type = "text" name = "name" autocomplete="off" autofocus class="nametext">
                   <br />
-                  <!-- Organization:
+                  Organization:
                   <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)" class="org">
-                  <br /> -->
-                  NUSNet ID: <input type = "text" name = "email" autocomplete="off" placeholder="E1234567">
                   <br />
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">

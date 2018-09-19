@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Date;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 // Extend HttpServlet class
 public class CheckIn extends HttpServlet {
@@ -36,23 +37,25 @@ public class CheckIn extends HttpServlet {
         // Get qrcode input and find corresponding record
         message = request.getParameter("qrcode");
 
-        // Retrieve records already held on the server
-        ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
-        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
+        HashMap<String, String> record = null;
+        if (message != null && !message.trim().isEmpty()) {
+            allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
 
-        // Get corresponding record based on qr code (id)
-        HashMap<String, String> record = allLines.get(message);
-        if (record == null) {
-            registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime_masterstea");
-            allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords_masterstea");
-            record = allLines.get(message);
+            // Get corresponding record based on qr code (id)
+            record = allLines.get(message.trim());
         }
 
         message = "Error: no registration record found for QR code provided."; // set default message
         if (record != null) {   // Found record
+            // Retrieve records already held on the server
+            ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
                 message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
+
+                // Add this record into the print queue
+                ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>)application.getAttribute("printqueue");
+                printQueue.offer(record.get("id"));
             } else { // Already registered, do nothing
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
             }
@@ -60,8 +63,18 @@ public class CheckIn extends HttpServlet {
 
         // Redirect to qrcode request page with welcome message
         request.setAttribute("responsemessage", message);
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
-        dispatcher.forward(request, response);
+        // Update registration conter, and back up files if necessary
+        application.log("" + Admin.updateRegistrationCount());
+        if (Admin.isTimeToBackup()) {
+            application.log("time to backup");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Admin");
+            dispatcher.forward(request, response);
+        } else {
+            // Redirect to qrcode request page with welcome message
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
+//            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     // Method to handle GET method request.

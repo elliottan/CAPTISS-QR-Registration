@@ -55,6 +55,10 @@
         <servlet-name>CheckInResearchForum</servlet-name>
         <servlet-class>CheckInResearchForum</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Print</servlet-name>
+        <servlet-class>Print</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>CheckIn</servlet-name>
@@ -92,5 +96,8 @@
         <servlet-name>CheckInResearchForum</servlet-name>
         <url-pattern>/CheckInResearchForum</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>Print</servlet-name>
+        <url-pattern>/Print</url-pattern>
+    </servlet-mapping>
 </web-app>

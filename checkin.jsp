@@ -16,35 +16,21 @@
       <c:if test="${empty sessionScope.username}"><c:redirect url="index.jsp" /></c:if>
    </head>
    <body class="maincontent">
-      <nav class="navbar navbar-default">
-         <div class="container-fluid">
-            <div class="navbar-header">
-               <a class="navbar-brand" href="index.jsp"><img src="images/captlogo.png" class = "headerlogo"/></a>
-            </div>
-            <ul class="nav navbar-nav">
-               <!-- <li><a href="index.jsp">Home</a></li>
-               <li><a href="captiss.jsp">CAPTISS</a></li>
-               <li><a href="checkin.jsp">Register</a></li>
-               <li><a href="walkin.jsp">WalkIn</a></li>
-               <li><a href="admin.jsp">Admin</a></li>
-               <li><a href="Logout">Logout</a></li> -->
-               <jsp:include page="header.jsp" />
-            </ul>
-         </div>
-      </nav>
+      <jsp:include page="header_navbar.jsp" />
       <div class="container">
          <div class="row">
          </div>
          <div class="col-md-4 col-md-offset-4">
-            <img src = "images/mainlogo2.png" alt="" class="mainlogo" >
+            <img src = "images/mainlogo2.png" alt="" class="mainlogo walkinresearch" >
          </div>
       </div>
       <div class="container">
          <div class="row">
             <form action = "CheckIn" method = "POST" class="QR">
+            <input type="hidden" name="jsppage" value="/checkin.jsp">
             <p class="QRCODE">Please Scan Your QR Code</p>
             <input type = "text" name = "qrcode" autofocus autocomplete="off">
-            <input type = "submit" value = "Submit" / class="hiddenbutton">
+            <input type = "submit" value = "Submit" class="hiddenbutton" />
          </div>
          <div class="row requestrow" >
             ${requestScope["responsemessage"]}

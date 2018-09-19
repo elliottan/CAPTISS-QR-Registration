@@ -31,13 +31,12 @@
         <%-- <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <!-- <li><a href="captiss.jsp">CAPTISS</a></li> -->
+            <li><a href="captiss.jsp">CAPTISS</a></li>
             <!-- <li><a href="checkin.jsp">Register</a></li> -->
-            <li><a href="checkin_researchforum.jsp">Register</a></li>
             <!-- <li><a href="walkin.jsp">Walk-In</a></li> -->
-            <li><a href="walkin_researchforum.jsp">Walk-In</a></li>
+            <li><a href="walkin.jsp">Walk-In</a></li>
             <!-- <li><a href="admin.jsp">Admin</a></li> -->
-            <li><a href="admin_researchforum.jsp">Admin</a></li>
+            <li><a href="admin.jsp">Admin</a></li>
             <li><a href="Logout">Logout</a></li>
           </ul>
         </li>
@@ -47,14 +46,15 @@
         <!-- <li><a href="checkin.jsp">Register</a></li> -->
 
         <!-- <li><a href="walkin.jsp">Walk-In</a></li> -->
-        <li><a href="admin_researchforum.jsp"><span class="glyphicon glyphicon-user"></span>Admin</a></li>
+        <li><a href="admin.jsp"><span class="glyphicon glyphicon-user"></span>Admin</a></li>
         <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --%>
-        <li><a href="checkin_researchforum.jsp">Register</a></li>
-        <li><a href="walkin_researchforum.jsp">Walk-In</a></li>
+        <li><a href="captiss.jsp">CAPTISS</a></li>
+        <!-- <li><a href="checkin.jsp">Register</a></li> -->
+        <li><a href="walkin.jsp">Walk-In</a></li>
       </ul>
     </div>
   </div>

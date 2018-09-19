@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 // Extend HttpServlet class
 // Admin Servlet will be loaded on Web Server startup (specified in web.xml file)
@@ -21,27 +22,30 @@ public class Admin extends HttpServlet {
     private ServletContext application; // Get context for logging purposes
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
 
-    public static String fileFolder = "research_forum_150918";
-    public static String fileName = "researchforum150918.csv";
+    public static String fileFolder = "captiss_220918";
+    public static String fileName = "captiss220918.csv";
     public static int registrationCount = 0; // Count how many people have been registered
     private static int registrationCountThreshold = 5; // No of registrations before backing up
 
     public void init() throws ServletException {
         // Do required initialization
         application = getServletContext();  // Get context for logging purposes
+        application.setAttribute("labeltemplatepath", application.getRealPath("labelprinting/label_template.lbx").replace("\\","/"));
+        application.log((String)application.getAttribute("labeltemplatepath"));
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 //        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
+        application.setAttribute("printqueue", new ConcurrentLinkedQueue<String>()); // To keep track of current IDs in the queue for printing
 
         pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
                 new ArrayList<>() {{
                     add("id");
                     add("name");
-                    add("title");
                     add("org");
-                    add("email");
-                    add("lunch");
-                    add("tea");
-                    add("imgpath");
+                    add("cat");
+                    add("p1");
+                    add("p2");
+                    add("p3");
+                    add("p4");
                     add("imgurl");
                 }}, "registrationrecords");
 
@@ -182,15 +186,12 @@ public class Admin extends HttpServlet {
             e.printStackTrace();
         }
 
-        String prevPage = (String)request.getParameter("jsppage");
+        String prevPage = (String) request.getParameter("jsppage");
         if (prevPage == null || prevPage.trim().isEmpty())
-            prevPage = "/admin_researchforum.jsp";
-//        application.log(prevPage);
+            prevPage = "/admin.jsp";
 
         // Redirect back to admin page
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
         RequestDispatcher dispatcher = application.getRequestDispatcher(prevPage);
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -206,8 +207,7 @@ public class Admin extends HttpServlet {
         }
 
         // Redirect back to admin page
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(request, response);
     }
 

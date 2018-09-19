@@ -4,15 +4,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Handle walk-in (on the spot) registration
@@ -28,10 +27,8 @@ public class WalkIn extends HttpServlet {
         application = getServletContext();  // Get context for logging purposes
 
         // Retrieve records already held on the server
-//        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
-        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords_masterstea");
-//        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
-        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime_masterstea");
+        allLines = (HashMap<String, HashMap<String, String>>) application.getAttribute("registrationrecords");
+        registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
     }
 
     // Method to handle POST method request.
@@ -47,40 +44,15 @@ public class WalkIn extends HttpServlet {
 
         // Get parameters sent from walkin.jsp page
         String name = request.getParameter("name");
-//        String org = request.getParameter("org");
-        String email = request.getParameter("email");
-//        String title = request.getParameter("title");
-//        switch (title) {
-//            case "prof":
-//                title = "Prof";
-//                break;
-//            case "assocprof":
-//                title = "Assoc Prof";
-//                break;
-//            case "dr":
-//                title = "Dr";
-//                break;
-//            case "mr":
-//                title = "Mr";
-//                break;
-//            case "mrs":
-//                title = "Mrs";
-//                break;
-//            case "ms":
-//                title = "Ms";
-//                break;
-//            default:
-//                title = "";
-//                break;
-//        }
+        String org = request.getParameter("org");
+//        s
 
         HashMap<String, String> newRecord = new HashMap<>();
         String newUuid = UUID.randomUUID().toString(); // Generate walk-in QR code/ID
         newRecord.put("id", newUuid);
-        newRecord.put("name", name.trim());
-        newRecord.put("email", email.trim());
+        newRecord.put("name", name.trim().replace(",",""));
 //        newRecord.put("title", title);
-//        newRecord.put("org", org.trim());
+        newRecord.put("org", org.trim().replace(",",""));
 
         // Store in registration records, as well as registration time (attendance)
         allLines.put(newUuid, newRecord);
@@ -94,11 +66,9 @@ public class WalkIn extends HttpServlet {
         // Write to original input file
         FileOutputStream fout = null;
         try {
-//            File file = new File(application.getRealPath("WEB-INF/files/research_forum_150918/researchforum150918.csv"));
-            File file = new File(application.getRealPath("WEB-INF/files/masters_tea_130918/masterstea130918.csv"));
+            File file = new File(application.getRealPath("WEB-INF/files/" + Admin.fileFolder + "/" + Admin.fileName));
             fout = new FileOutputStream(file, true);
-//            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("title") + "," + newRecord.get("org") + "\n").getBytes()); // append to end of file
-            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
+            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("org") + ",Walk-In" + "\n").getBytes()); // append to end of file
             application.log("Successfully updated to input .csv file");
         } catch (FileNotFoundException e) {
             application.log("Error when trying to open file to write to (the file may be open), please try writing again");
@@ -113,7 +83,8 @@ public class WalkIn extends HttpServlet {
 
         // Redirect back to check-in page
         request.setAttribute("responsemessage", message);
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -129,7 +100,8 @@ public class WalkIn extends HttpServlet {
         }
 
         // Redirect to walk-in page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
         dispatcher.forward(request, response);
     }
 

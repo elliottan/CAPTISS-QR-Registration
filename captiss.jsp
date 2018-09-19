@@ -5,7 +5,6 @@
       <link rel="stylesheet" type="text/css" href="css/button.css" >
         <link rel="stylesheet" type="text/css" href="css/captiss.css" >
 
-
       <link rel="stylesheet" href="css/bootstrap.css">
         <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,14 +21,7 @@
                       <div class="navbar-header">
                         <a class="navbar-brand" href="index.jsp"><img src="images/captisslogo.png" class = "headerlogo"/></a>
                       </div>
-                      <ul class="nav navbar-nav">
-                        <!-- <li><a href="captiss.jsp">CAPTISS</a></li>
-                        <li><a href="checkin.jsp">Register</a></li>
-                        <li><a href="walkin.jsp">WalkIn</a></li>
-                        <li><a href="admin.jsp">Admin</a></li>
-                        <li><a href="Logout">Logout</a></li> -->
-                        <jsp:include page="header.jsp" />
-                      </ul>
+                      <jsp:include page="header_navbar.jsp" />
                     </div>
                   </nav>
 
@@ -40,6 +32,7 @@
                         <div class="col-md-6 qrstart">
 
                         <form action = "CheckIn" method = "POST" class="QR">
+                          <input type="hidden" name="jsppage" value="/captiss.jsp">
                           <p class="QRCODE">QR Code.</p> <input type = "text" name = "qrcode" autofocus autocomplete="off">
                           <input type = "submit" value = "Submit" / class="hiddenbutton">
                         </div>

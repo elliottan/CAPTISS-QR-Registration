@@ -2,7 +2,6 @@
 <html>
    <head>
       <title>Home</title>
-      <!-- meta http-equiv="X-UA-Compatible" content="IE=6" -->
       <script language="javascript" type="text/javascript">
         <!--
         function DoPrint() {
@@ -42,7 +41,6 @@
       <link rel="shortcut icon" href="https://captlife.com/wp-content/uploads/2017/12/cropped-CAPT_Logo_Vertical-32x32.png">
 
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-      <c:if test="${!empty sessionScope.username}"><c:redirect url="admin_researchforum.jsp" /></c:if>
    </head>
    <body class="maincontent">
       <nav class="navbar navbar-default">
