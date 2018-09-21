@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Handle walk-in (on the spot) registration
@@ -53,12 +54,17 @@ public class WalkIn extends HttpServlet {
         newRecord.put("name", name.trim().replace(",",""));
 //        newRecord.put("title", title);
         newRecord.put("org", org.trim().replace(",",""));
+        newRecord.put("cat", "Walk-In");
 
         // Store in registration records, as well as registration time (attendance)
         allLines.put(newUuid, newRecord);
         if (!registrationTime.containsKey(newUuid)) {   // If haven't been registered previously
             registrationTime.putIfAbsent(newUuid, new Date()); // Add registration record
             message = "Welcome, <h3>" + newRecord.get("name") + "</h3>! You have been successfully registered.";
+
+            // Add this record into the print queue
+            ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>)application.getAttribute("printqueue");
+            printQueue.offer(newRecord.get("id"));
         } else { // Already registered, do nothing
             message = "Welcome back, <h3>" + newRecord.get("name") + "</h3>, you have already been registered previously.";
         }

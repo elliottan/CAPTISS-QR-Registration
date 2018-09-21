@@ -35,6 +35,8 @@ public class CheckIn extends HttpServlet {
         response.setContentType("text/html");
 
         // Get qrcode input and find corresponding record
+        message = request.getParameter("print");
+        boolean toPrint = message != null && message.equalsIgnoreCase("print") ? true : false;
         message = request.getParameter("qrcode");
 
         HashMap<String, String> record = null;
@@ -52,12 +54,15 @@ public class CheckIn extends HttpServlet {
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
                 message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
-
-                // Add this record into the print queue
-                ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>)application.getAttribute("printqueue");
-                printQueue.offer(record.get("id"));
+                toPrint = true;
             } else { // Already registered, do nothing
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
+            }
+
+            // Add this record into the print queue
+            if (toPrint) {
+                ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>) application.getAttribute("printqueue");
+                printQueue.offer(record.get("id"));
             }
         }
 

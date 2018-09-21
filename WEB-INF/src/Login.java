@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
         if (username.equalsIgnoreCase("admin")
                 && password.equals("admin")) {
             // Valid login, redirect to admin page
-            RequestDispatcher dispatcher = application.getRequestDispatcher("/admin_researchforum.jsp");
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/admin.jsp");
             dispatcher.forward(request, response);
 
             // Set session variable so that user name access all other pages

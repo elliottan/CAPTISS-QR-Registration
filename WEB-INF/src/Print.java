@@ -31,14 +31,14 @@ public class Print extends HttpServlet {
 
             // Cat 1 or 2, print panel
             if (record.get("cat").equals("1") || record.get("cat").equals("1.5") || record.get("cat").equals("2")) {
-                printString.append(id + "," + record.get("name") + ","
-                        + (record.get("p1").isEmpty() ? "-" : record.get("p1").charAt(0)) + ","
-                        + (record.get("p2").isEmpty() ? "-" : record.get("p2").charAt(0)) + ","
-                        + (record.get("p3").isEmpty() ? "-" : record.get("p3").charAt(0)) + ","
+                printString.append(id + "|" + record.get("name") + "|"
+                        + (record.get("p1").isEmpty() ? "-" : record.get("p1").charAt(0)) + "|"
+                        + (record.get("p2").isEmpty() ? "-" : record.get("p2").charAt(0)) + "|"
+                        + (record.get("p3").isEmpty() ? "-" : record.get("p3").charAt(0)) + "|"
                         + (record.get("p4").isEmpty() ? "-" : record.get("p4").charAt(0)) + ";");
             } else {
-                printString.append(id + "," + record.get("name") + ","
-                        + record.get("cat"));
+                printString.append(id + "|" + record.get("name") + "|"
+                        + record.get("cat") + ";");
             }
         }
 

@@ -31,29 +31,35 @@ public class Admin extends HttpServlet {
         // Do required initialization
         application = getServletContext();  // Get context for logging purposes
         application.setAttribute("labeltemplatepath", application.getRealPath("labelprinting/label_template.lbx").replace("\\","/"));
+        application.setAttribute("labeltemplatepath2", application.getRealPath("labelprinting/label_template_2.lbx").replace("\\","/"));
         application.log((String)application.getAttribute("labeltemplatepath"));
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
 //        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
         application.setAttribute("printqueue", new ConcurrentLinkedQueue<String>()); // To keep track of current IDs in the queue for printing
+//        application.setAttribute("showabsent", true);
 
-        pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
-                new ArrayList<>() {{
-                    add("id");
-                    add("name");
-                    add("org");
-                    add("cat");
-                    add("p1");
-                    add("p2");
-                    add("p3");
-                    add("p4");
-                    add("imgurl");
-                }}, "registrationrecords");
-
-        pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv",
-                new ArrayList<>() {{
-                    add("id");
-                    add("timein");
-                }}, "registrationtime");
+        try {
+            pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
+                    new ArrayList<>() {{
+                        add("id");
+                        add("name");
+                        add("org");
+                        add("cat");
+                        add("p1");
+                        add("p2");
+                        add("p3");
+                        add("p4");
+                        add("imgurl");
+                    }}, "registrationrecords");
+            // application.log(((HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords")).toString());
+            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv",
+                    new ArrayList<>() {{
+                        add("id");
+                        add("timein");
+                    }}, "registrationtime");
+        } catch (Exception e) {
+            application.log(e.toString());
+        }
 
 //        pullRecordsFromFile("WEB-INF/files/masters_tea_130918/masterstea130918.csv",
 //                new ArrayList<>() {{
@@ -81,7 +87,7 @@ public class Admin extends HttpServlet {
         }
     }
 
-    private void pullRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) {
+    private void pullRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) throws Exception {
         // Open registration file and parse the csv file of data (immediately when server starts up)
         // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
         application.log(application.getRealPath(filePath));
@@ -91,7 +97,7 @@ public class Admin extends HttpServlet {
         application.log("Successfully pulled registration records from file");
     }
 
-    private void pullExistingAttendanceRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) {
+    private void pullExistingAttendanceRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) throws Exception {
         // Pull existing attendance records
         CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
         HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
@@ -186,11 +192,10 @@ public class Admin extends HttpServlet {
             e.printStackTrace();
         }
 
+        // Get whichever page user came from
         String prevPage = (String) request.getParameter("jsppage");
         if (prevPage == null || prevPage.trim().isEmpty())
             prevPage = "/admin.jsp";
-
-        // Redirect back to admin page
         RequestDispatcher dispatcher = application.getRequestDispatcher(prevPage);
         dispatcher.forward(request, response);
     }

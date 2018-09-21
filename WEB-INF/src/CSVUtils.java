@@ -15,7 +15,7 @@ public class CSVUtils {
 
     // Extract data from a csv file with path "csvFile", that has "ignoreLines" number of rows to be ignroed,
     // and with column data corresponding to the "headers" list provided
-    public CSVUtils(String csvFile, List<String> headers, int ignoreLines) {
+    public CSVUtils(String csvFile, List<String> headers, int ignoreLines) throws Exception {
         Scanner scanner = null;
         allLines = new HashMap<>();
         try {
@@ -37,6 +37,7 @@ public class CSVUtils {
         } catch (Exception e) {
             exceptionCaught = true;
             exceptionString = e.getMessage();
+            throw e;
         } finally {
             if (scanner != null)
                 scanner.close();

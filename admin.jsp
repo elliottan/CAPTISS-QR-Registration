@@ -31,23 +31,26 @@
                </form>
 
                <!-- Filter by names -->
-               <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for name..." id="nameFilterInput" onkeyup="sortTableByName()">
+               <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for name..." id="nameFilterInput" onkeyup="sortTableByName(2, 'nameFilterInput')">
                <br />
 
                <table border="3" class="admintable" id="myTable">
                   <tr>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(1)')" style="cursor:pointer">No</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(2)')" style="cursor:pointer">Name</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')" style="cursor:pointer">Organization</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(4)')" style="cursor:pointer">Category</th>
+                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(1)')" style="cursor:pointer">#</th>
+                     <th>QR</th>
+                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')" style="cursor:pointer">Name</th>
+                     <th>Organization</th>
+                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')" style="cursor:pointer">Category</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')" style="cursor:pointer">P1</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(6)')" style="cursor:pointer">P2</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(7)')" style="cursor:pointer">P3</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(8)')" style="cursor:pointer">P4</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(9)')" style="cursor:pointer">Time-In</th>
+                     <th>Time-In</th>
+                     <th>Print</th>
                   </tr>
                   <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
                      <tr class="item">
+                        <td>${status.index + 1}</td>
                         <td>${record.get("id")}</td>
                         <td>${record.get("name")}</td>
                         <td>${record.get("org")}</td>
@@ -68,6 +71,20 @@
                                     </form>
                                 </c:when>
                                 <c:otherwise>${registrationtime.get(record.get("id"))}</c:otherwise>
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${empty registrationtime.get(record.get(\"id\"))}">-</c:when>
+                                <c:otherwise>
+                                    <form action = "CheckIn" method = "POST">
+                                        <a href="#" class="btn">
+                                            <input type="text" name="qrcode" style="display:none" value="${record.get('id')}" />
+                                            <input type="text" name="print" style="display:none" value="print" />
+                                            <input type="submit" value="Print" class="adminbutton" />
+                                        </a>
+                                    </form>
+                                </c:otherwise>
                             </c:choose>
                         </td>
                      </tr>
