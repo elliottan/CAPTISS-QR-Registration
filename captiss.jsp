@@ -21,7 +21,7 @@
                     <div class="container">
 
                       <div class="row">
-                        <img src="images/captisslogo.png" class="captisslogo"/>
+                        <img src="images/captisslogo.jpg" class="captisslogo">
                         <div class="col-md-3"></div>
                         <div class="col-md-6 qrstart">
 
@@ -47,4 +47,34 @@
                 <%-- <div class="footer">
                   <p class="copyright">&copy Copyright 2018 College of Alice & Peter Tan. All Rights Reserved.</p>
                 </div> --%>
+<style>
+@media all and (max-width: 600px){
+  .requestrow{
+    margin-top:10% !important;
+  }
+  .captisslogo{
+    width:70%;
+    margin-left:15%;
+    margin-top:10%;
+    margin-bottom:-10%;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+  .captisslogo{
+    width:70% !important;
+    margin-left:15% !important;
+    margin-top:10%;
+  }
+  .requestrow{
+    font-size:44px !important;
+    margin-top:10%;
+  }
+  .requestrow h3{
+    font-size:50px !important;
+  }
+  .QRCODE{
+    margin-top:-5%;
+  }
+}
+</style>
             </html>
