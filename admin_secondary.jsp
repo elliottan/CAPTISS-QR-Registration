@@ -35,7 +35,7 @@
                           <input type="hidden" name="jsppage" value="/admin.jsp">
                           <input type="hidden" name="showabsentonly" value="false">
                           <a href="#" class="btn btn-sm animated-button victoria-one ">
-                          <input type = "submit" value = "Show All" class="submitbutton" /></a>
+                          <input type = "submit" value = "Show All" class="submitbutton submitbutton2" /></a>
                        </form>
                    </c:when>
                    <c:otherwise>
@@ -43,7 +43,7 @@
                           <input type="hidden" name="jsppage" value="/admin.jsp">
                           <input type="hidden" name="showabsentonly" value="true">
                           <a href="#" class="btn btn-sm animated-button victoria-one ">
-                          <input type = "submit" value = "Show Absent" class="submitbutton" /></a>
+                          <input type = "submit" value = "Show Absent" class="submitbutton submitbutton2" /></a>
                        </form>
                   </c:otherwise>
                </c:choose>

@@ -46,17 +46,17 @@
         <!-- <li><a href="checkin.jsp">Register</a></li> -->
 
         <!-- <li><a href="walkin.jsp">Walk-In</a></li> -->
-        <li><a href="admin.jsp"><span class="glyphicon glyphicon-user"></span>Admin</a></li>
+        <li><a href="captiss.jsp">CAPTISS</a></li>
+        <%-- <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li> --%>
         <li><a href="checkin_secondary.jsp">Audi3</a></li>
-        <li><a href="admin_secondary.jsp">Admin Audi3</a></li>
-        <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="admin.jsp"><span class="glyphicon glyphicon-user"></span>Admin</a></li>
+        <li><a href="admin_secondary.jsp"><span class="glyphicon glyphicon-user"></span>Admin Audi3</a></li>
+        <li><a href="walkin.jsp">Walk-In</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --%>
-        <li><a href="captiss.jsp">CAPTISS</a></li>
-        <!-- <li><a href="checkin.jsp">Register</a></li> -->
-        <li><a href="walkin.jsp">Walk-In</a></li>
+
       </ul>
     </div>
   </div>

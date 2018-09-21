@@ -41,19 +41,20 @@
                   <input type = "text" name = "name" autocomplete="off" autofocus class="nametext">
                   <br />
                   Organization:
-                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, YALE-NUS, ARI, FASS, etc)" class="org">
+                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, etc)" class="org">
                   <br />
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">
                      <input type = "submit" value = "Submit" / class="submitbutton"></a>
                   </div>
                </form>
-            </div>
-            <div class="col-md-4 col-md-offset-4">
-               <div class="row requestrow" >
-                  ${requestScope["responsemessage"]}
+               <div class="col-md-12">
+                  <div class="row requestrow" >
+                     ${requestScope["responsemessage"]}
+                  </div>
                </div>
             </div>
+
          </div>
       </div>
       </div>
