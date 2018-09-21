@@ -90,7 +90,7 @@ public class WalkIn extends HttpServlet {
         // Redirect back to check-in page
         request.setAttribute("responsemessage", message);
 //        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -106,7 +106,7 @@ public class WalkIn extends HttpServlet {
         }
 
         // Redirect to walk-in page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
 //        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
         dispatcher.forward(request, response);
     }
