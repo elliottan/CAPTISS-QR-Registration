@@ -52,8 +52,8 @@
         <servlet-class>WalkInResearchForum</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CheckInResearchForum</servlet-name>
-        <servlet-class>CheckInResearchForum</servlet-class>
+        <servlet-name>CheckInSecondary</servlet-name>
+        <servlet-class>CheckInSecondary</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Print</servlet-name>
@@ -93,8 +93,8 @@
         <url-pattern>/WalkInResearchForum</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CheckInResearchForum</servlet-name>
-        <url-pattern>/CheckInResearchForum</url-pattern>
+        <servlet-name>CheckInSecondary</servlet-name>
+        <url-pattern>/CheckInSecondary</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Print</servlet-name>

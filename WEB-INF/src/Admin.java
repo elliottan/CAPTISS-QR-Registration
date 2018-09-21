@@ -24,19 +24,19 @@ public class Admin extends HttpServlet {
 
     public static String fileFolder = "captiss_220918";
     public static String fileName = "captiss220918.csv";
+    public static String secondaryVenueName = "UTown Audi 3";
     public static int registrationCount = 0; // Count how many people have been registered
     private static int registrationCountThreshold = 5; // No of registrations before backing up
 
     public void init() throws ServletException {
-        // Do required initialization
         application = getServletContext();  // Get context for logging purposes
         application.setAttribute("labeltemplatepath", application.getRealPath("labelprinting/label_template.lbx").replace("\\","/"));
         application.setAttribute("labeltemplatepath2", application.getRealPath("labelprinting/label_template_2.lbx").replace("\\","/"));
-        application.log((String)application.getAttribute("labeltemplatepath"));
+//        application.log((String)application.getAttribute("labeltemplatepath"));
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
-//        application.setAttribute("registrationtime_masterstea", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
+        application.setAttribute("registrationtime_secondary", new ConcurrentHashMap<String, Date>());
         application.setAttribute("printqueue", new ConcurrentLinkedQueue<String>()); // To keep track of current IDs in the queue for printing
-//        application.setAttribute("showabsent", true);
+        application.setAttribute("showabsentonly", "false");
 
         try {
             pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
@@ -49,32 +49,35 @@ public class Admin extends HttpServlet {
                         add("p2");
                         add("p3");
                         add("p4");
+                        add("blank");
                         add("imgurl");
                     }}, "registrationrecords");
             // application.log(((HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords")).toString());
+        } catch (Exception e) {
+            application.log(e.toString());
+        }
+
+        try {
             pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv",
                     new ArrayList<>() {{
                         add("id");
                         add("timein");
                     }}, "registrationtime");
+
         } catch (Exception e) {
             application.log(e.toString());
         }
 
-//        pullRecordsFromFile("WEB-INF/files/masters_tea_130918/masterstea130918.csv",
-//                new ArrayList<>() {{
-//                    add("id");
-//                    add("name");
-//                    add("email");
-//                    add("imgpath");
-//                    add("imgurl");
-//                }}, "registrationrecords_masterstea");
-//
-//        pullExistingAttendanceRecordsFromFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv",
-//                new ArrayList<>() {{
-//                    add("id");
-//                    add("timein");
-//                }}, "registrationtime_masterstea");
+        try {
+            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv",
+                    new ArrayList<>() {{
+                        add("id");
+                        add("timein");
+                    }}, "registrationtime_secondary");
+
+        } catch (Exception e) {
+            application.log(e.toString());
+        }
 
         // Get web server's current IP address and store it as an application variable
         application.setAttribute("ipaddress", "<unknown>");
@@ -94,7 +97,7 @@ public class Admin extends HttpServlet {
         CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
         HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
         application.setAttribute(appAttributeName, allLines); // Store in server application for all to access
-        application.log("Successfully pulled registration records from file");
+        application.log("Successfully pulled registration records from file: " + filePath);
     }
 
     private void pullExistingAttendanceRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) throws Exception {
@@ -117,7 +120,7 @@ public class Admin extends HttpServlet {
                 }
             }
             application.setAttribute(appAttributeName, registrationtime);
-            application.log("Successfully pulled previous attendance records from file");
+            application.log("Successfully pulled previous attendance records from file: " + filePath);
         }
     }
 
@@ -158,7 +161,7 @@ public class Admin extends HttpServlet {
                     fout.write((key + "," + dateFormatter.format(time) + "\n").getBytes());
             }
 
-            application.log("Successfully written to output file");
+            application.log("Successfully written to output file: " + filePath);
         } catch (FileNotFoundException e) {
             application.log("Error when trying to open file to write to (the file may be open), please try writing again");
         } catch (Exception e) {
@@ -180,8 +183,15 @@ public class Admin extends HttpServlet {
             return;
         }
 
+        // If the request had a showabsent value
+        message = request.getParameter("showabsentonly");
+        if (message != null) {
+            application.setAttribute("showabsentonly", message);
+            application.log("Show absent only is set to: " + application.getAttribute("showabsentonly").toString());
+        }
+
         backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv", "registrationtime");
-//        backupToFile("WEB-INF/files/masters_tea_130918/outputfiles/outputfile.csv", "registrationtime_masterstea");
+        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv", "registrationtime_secondary");
 
         // Update IP address
         try {

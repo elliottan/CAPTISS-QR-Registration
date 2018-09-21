@@ -2,33 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf5b3697-ed87-4863-bca3-d07189f573b8" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$3.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/WEB-INF/classes/CheckInSecondary.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin_secondary.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/archive/admin_researchforum.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/archive/checkin_researchforum.jsp" afterPath="$PROJECT_DIR$/checkin_secondary.jsp" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$1.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin$2.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Admin.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/CSVUtils.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/CSVUtils.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/CheckIn.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/CheckIn.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Login.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Login.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/Print.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/Print.class" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/CheckInResearchForum.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/classes/WalkIn.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/WalkIn.class" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/captiss_220918/captiss220918 - original.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/WalkInResearchForum.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/WalkInResearchForum.class" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/files/captiss_220918/captiss220918.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/captiss_220918/captiss220918.csv" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/outputfiles/outputfile.csv" afterPath="$PROJECT_DIR$/WEB-INF/files/masters_tea_060918/outputfiles/outputfile.csv" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/src/Admin.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/src/CSVUtils.java" afterPath="$PROJECT_DIR$/WEB-INF/src/CSVUtils.java" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" afterPath="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Login.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Login.java" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Print.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Print.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" afterPath="$PROJECT_DIR$/WEB-INF/src/CheckInSecondary.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/Email.java" afterPath="$PROJECT_DIR$/WEB-INF/src/Email.java" />
       <change beforePath="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" afterPath="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java" afterPath="$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/admin.jsp" afterPath="$PROJECT_DIR$/admin.jsp" />
-      <change beforePath="$PROJECT_DIR$/admin_researchforum.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checkin_researchforum.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/js/tableFilter.js" afterPath="$PROJECT_DIR$/js/tableFilter.js" />
-      <change beforePath="$PROJECT_DIR$/labelprinting/label_template.lbx" afterPath="$PROJECT_DIR$/labelprinting/label_template.lbx" />
-      <change beforePath="$PROJECT_DIR$/labelprinting/label_template_2.lbx" afterPath="$PROJECT_DIR$/labelprinting/label_template_2.lbx" />
-      <change beforePath="$PROJECT_DIR$/print.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/header_navbar.jsp" afterPath="$PROJECT_DIR$/header_navbar.jsp" />
       <change beforePath="$PROJECT_DIR$/printqueue.jsp" afterPath="$PROJECT_DIR$/printqueue.jsp" />
-      <change beforePath="$PROJECT_DIR$/walkin_researchforum.jsp" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="printqueue.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="printqueue.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/printqueue.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="40" column="114" lean-forward="false" selection-start-line="40" selection-start-column="114" selection-end-line="40" selection-end-column="114" />
+            <state relative-caret-position="231">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -53,18 +50,28 @@
       <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="77" column="70" lean-forward="false" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+            <state relative-caret-position="-294">
+              <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.jsp">
+      <file leaf-file-name="admin_secondary.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_secondary.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="43" column="88" lean-forward="false" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="88" />
+            <state relative-caret-position="1008">
+              <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkin_secondary.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/checkin_secondary.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="30" column="52" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -73,34 +80,16 @@
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+            <state relative-caret-position="502">
+              <caret line="189" column="57" lean-forward="false" selection-start-line="189" selection-start-column="57" selection-end-line="189" selection-end-column="57" />
               <folding>
-                <element signature="e#7126#7127#0" expanded="true" />
-                <element signature="e#7200#7201#0" expanded="true" />
+                <element signature="method#init#0;class#Admin#0" expanded="false" />
+                <element signature="method#pullRecordsFromFile#0;class#Admin#0" expanded="false" />
+                <element signature="method#pullExistingAttendanceRecordsFromFile#0;class#Admin#0" expanded="false" />
+                <element signature="method#isLoggedIn#0;class#Admin#0" expanded="false" />
+                <element signature="method#updateRegistrationCount#0;class#Admin#0" expanded="false" />
+                <element signature="method#backupToFile#0;class#Admin#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WalkIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Print.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/src/Print.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +97,30 @@
       <file leaf-file-name="CheckIn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckIn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+            <state relative-caret-position="420">
+              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WalkIn.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkIn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="76" column="103" lean-forward="false" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckInSecondary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInSecondary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -135,11 +146,20 @@
       <find>jstl</find>
       <find>registrationrecords_masterstea</find>
       <find>registrationtime_masterstea</find>
-      <find>registrationtime</find>
       <find>CHECKin</find>
       <find>registrationrecords</find>
       <find>hashmap</find>
       <find>,</find>
+      <find>research</find>
+      <find>reserach</find>
+      <find>checkin</find>
+      <find>registrationtime_secondary</find>
+      <find>registrationTime</find>
+      <find>registrationtime</find>
+      <find>array</find>
+      <find>ArrayList</find>
+      <find>result</find>
+      <find>message</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,22 +199,25 @@
         <option value="$PROJECT_DIR$/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/header.jsp" />
         <option value="$PROJECT_DIR$/walkin_researchforum.jsp" />
-        <option value="$PROJECT_DIR$/header_navbar.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java" />
         <option value="$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java" />
         <option value="$PROJECT_DIR$/checkin_researchforum.jsp" />
         <option value="$PROJECT_DIR$/admin_researchforum.jsp" />
         <option value="$PROJECT_DIR$/print.jsp" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
         <option value="$PROJECT_DIR$/index.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/Login.java" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/CSVUtils.java" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
         <option value="$PROJECT_DIR$/WEB-INF/src/Print.java" />
         <option value="$PROJECT_DIR$/js/tableFilter.js" />
-        <option value="$PROJECT_DIR$/admin.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/CheckIn.java" />
         <option value="$PROJECT_DIR$/printqueue.jsp" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/CheckInSecondary.java" />
+        <option value="$PROJECT_DIR$/header_navbar.jsp" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/WalkIn.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/CSVUtils.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/Admin.java" />
+        <option value="$PROJECT_DIR$/admin.jsp" />
+        <option value="$PROJECT_DIR$/admin_secondary.jsp" />
+        <option value="$PROJECT_DIR$/checkin_secondary.jsp" />
       </list>
     </option>
   </component>
@@ -221,17 +244,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="captiss" type="b2602c69:ProjectViewProjectNode" />
               <item name="captiss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="captiss" type="b2602c69:ProjectViewProjectNode" />
-              <item name="captiss" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="captiss" type="b2602c69:ProjectViewProjectNode" />
@@ -252,10 +272,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,21 +285,21 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss" />
+      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF" />
+      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF\archive" />
+      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\css" />
+      <recent name="C:\apache-tomcat-9.0.10\webapps" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\apache-tomcat-9.0.10\webapps\captiss" />
       <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF\src" />
       <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF\classes" />
       <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss" />
-      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF\archive" />
-      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\WEB-INF" />
-      <recent name="C:\apache-tomcat-9.0.10\webapps\captiss\css" />
-      <recent name="C:\apache-tomcat-9.0.10\webapps" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -397,7 +415,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -413,6 +430,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -424,7 +442,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -440,7 +457,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/Server.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -584,33 +600,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/header.jsp" />
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInResearchForum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checkin_researchforum.jsp" />
     <entry file="file://$PROJECT_DIR$/walkin_researchforum.jsp" />
-    <entry file="file://$PROJECT_DIR$/header_navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="91" column="112" lean-forward="false" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/print.jsp" />
-    <entry file="file://$PROJECT_DIR$/admin_researchforum.jsp" />
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -623,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,75 +621,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="88" lean-forward="false" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header_navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckInSecondary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/Print.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="147">
+          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkInResearchForum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="93" column="102" lean-forward="false" selection-start-line="93" selection-start-column="102" selection-end-line="93" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="569" column="6" lean-forward="false" selection-start-line="569" selection-start-column="6" selection-end-line="569" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CSVUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="31" column="77" lean-forward="false" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
+          <folding>
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/printqueue.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/WalkIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+        <state relative-caret-position="425">
+          <caret line="76" column="103" lean-forward="false" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CSVUtils.java">
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="420">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+        <state relative-caret-position="502">
+          <caret line="189" column="57" lean-forward="false" selection-start-line="189" selection-start-column="57" selection-end-line="189" selection-end-column="57" />
           <folding>
-            <element signature="e#7126#7127#0" expanded="true" />
-            <element signature="e#7200#7201#0" expanded="true" />
+            <element signature="method#init#0;class#Admin#0" expanded="false" />
+            <element signature="method#pullRecordsFromFile#0;class#Admin#0" expanded="false" />
+            <element signature="method#pullExistingAttendanceRecordsFromFile#0;class#Admin#0" expanded="false" />
+            <element signature="method#isLoggedIn#0;class#Admin#0" expanded="false" />
+            <element signature="method#updateRegistrationCount#0;class#Admin#0" expanded="false" />
+            <element signature="method#backupToFile#0;class#Admin#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="43" column="88" lean-forward="false" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="77" column="70" lean-forward="false" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+        <state relative-caret-position="-294">
+          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/CheckIn.java">
+    <entry file="file://$PROJECT_DIR$/admin_secondary.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        <state relative-caret-position="1008">
+          <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/printqueue.jsp">
+    <entry file="file://$PROJECT_DIR$/checkin_secondary.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="40" column="114" lean-forward="false" selection-start-line="40" selection-start-column="114" selection-end-line="40" selection-end-column="114" />
+        <state relative-caret-position="567">
+          <caret line="30" column="52" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
           <folding />
         </state>
       </provider>

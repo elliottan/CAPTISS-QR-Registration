@@ -1,6 +1,6 @@
 <html>
    <head>
-      <title>Registration</title>
+      <title>Registration - Secondary</title>
       <link rel="stylesheet" type="text/css" href="css/custom.css" >
       <link rel="stylesheet" type="text/css" href="css/button.css" >
       <link rel="stylesheet" href="css/bootstrap.css">
@@ -26,9 +26,9 @@
       </div>
       <div class="container">
          <div class="row">
-            <form action = "CheckInResearchForum" method = "POST" class="QR">
-            <input type="hidden" name="jsppage" value="/checkin_researchforum.jsp">
-            <p class="QRCODE">Please Scan Your QR Code</p>
+            <form action = "CheckInSecondary" method = "POST" class="QR">
+            <input type="hidden" name="jsppage" value="/checkin_secondary.jsp">
+            <p class="QRCODE">QR Code (UTown Audi 3)</p>
             <input type = "text" name = "qrcode" autofocus autocomplete="off">
             <input type = "submit" value = "Submit" class="hiddenbutton" />
          </div>

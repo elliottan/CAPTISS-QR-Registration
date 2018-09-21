@@ -64,10 +64,9 @@
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(7)')" style="cursor:pointer">P3</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(8)')" style="cursor:pointer">P4</th>
                      <th>Time-In</th>
-                     <th>Print</th>
                   </tr>
                   <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
-                     <c:if test="${showabsentonly == 'false' || empty registrationtime.get(record.get(\"id\"))}">
+                     <c:if test="${showabsentonly == 'false' || empty registrationtime_secondary.get(record.get(\"id\"))}">
                          <tr class="item">
                             <td>${status.index + 1}</td>
                             <td>${record.get("id")}</td>
@@ -81,8 +80,8 @@
                             <!-- <td>${registrationtime.get(record.get("id"))}</td> -->
                             <td>
                                 <c:choose>
-                                    <c:when test="${empty registrationtime.get(record.get(\"id\"))}">
-                                        <form action = "CheckIn" method = "POST">
+                                    <c:when test="${empty registrationtime_secondary.get(record.get(\"id\"))}">
+                                        <form action = "CheckInSecondary" method = "POST">
                                             <a href="#" class="btn">
                                                 <input type="text" name="qrcode" style="display:none" value="${record.get('id')}" />
                                                 <input type="submit" value="Manual" class="adminbutton" />
@@ -92,22 +91,8 @@
                                     <c:otherwise>${registrationtime.get(record.get("id"))}</c:otherwise>
                                 </c:choose>
                             </td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${empty registrationtime.get(record.get(\"id\"))}">-</c:when>
-                                    <c:otherwise>
-                                        <form action = "CheckIn" method = "POST">
-                                            <a href="#" class="btn">
-                                                <input type="text" name="qrcode" style="display:none" value="${record.get('id')}" />
-                                                <input type="text" name="print" style="display:none" value="print" />
-                                                <input type="submit" value="Print" class="adminbutton" />
-                                            </a>
-                                        </form>
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
                          </tr>
-                     </c:if>
+                      </c:if>
                   </c:forEach>
                </table>
             </div>

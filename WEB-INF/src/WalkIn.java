@@ -74,7 +74,7 @@ public class WalkIn extends HttpServlet {
         try {
             File file = new File(application.getRealPath("WEB-INF/files/" + Admin.fileFolder + "/" + Admin.fileName));
             fout = new FileOutputStream(file, true);
-            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("org") + ",Walk-In" + "\n").getBytes()); // append to end of file
+            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("org") + "," + newRecord.get("cat") + "\n").getBytes()); // append to end of file
             application.log("Successfully updated to input .csv file");
         } catch (FileNotFoundException e) {
             application.log("Error when trying to open file to write to (the file may be open), please try writing again");

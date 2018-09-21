@@ -106,7 +106,7 @@ public class WalkInResearchForum extends HttpServlet {
 
         // Redirect back to check-in page
         request.setAttribute("responsemessage", message);
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_secondary.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -122,7 +122,7 @@ public class WalkInResearchForum extends HttpServlet {
         }
 
         // Redirect to walk-in page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_secondary.jsp");
         dispatcher.forward(request, response);
     }
 

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 // Extend HttpServlet class
-public class CheckInResearchForum extends HttpServlet {
+public class CheckInSecondary extends HttpServlet {
     private String message = "";
     private HashMap<String, HashMap<String, String>> allLines;
     private ServletContext application;
@@ -48,11 +48,15 @@ public class CheckInResearchForum extends HttpServlet {
         if (record != null) {   // Found record
             // Retrieve records already held on the server
             ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
+            ConcurrentHashMap<String, Date> registrationTimeSecondary = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime_secondary");
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
-                registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
-                message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
-            } else { // Already registered, do nothing
-                message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
+                message = "Error: not yet registered at the main counter.";
+            } else if (!registrationTimeSecondary.containsKey(record.get("id"))) {
+                registrationTimeSecondary.putIfAbsent(record.get("id"), new Date()); // Add registration record
+                message = "Hello, <h3>" + record.get("name") + "</h3>! Welcome to " + Admin.secondaryVenueName + "!";
+            } else {
+                message = "Welcome back, <h3>" + record.get("name")
+                        + "</h3>, you have already been registered at " + Admin.secondaryVenueName + " previously.";
             }
         }
         
@@ -66,7 +70,7 @@ public class CheckInResearchForum extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             // Redirect to qrcode request page with welcome message
-            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_secondary.jsp");
             dispatcher.forward(request, response);
         }
     }
@@ -82,7 +86,7 @@ public class CheckInResearchForum extends HttpServlet {
             return;
         }
 
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_researchforum.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin_secondary.jsp");
         dispatcher.forward(request, response);
     }
 

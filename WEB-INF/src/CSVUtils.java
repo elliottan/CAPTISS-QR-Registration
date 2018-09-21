@@ -29,10 +29,10 @@ public class CSVUtils {
                 HashMap<String, String> record = new HashMap<>();
 
                 // match each record to each header
-                for (int i = 0; i < headers.size(); i++) {
+                for (int i = 0; i < headers.size() && i < line.size(); i++) {
                     record.put(headers.get(i), line.get(i).replace("\"",""));
-                    allLines.put(line.get(0), record);    // Use first column as unique ID
                 }
+                allLines.put(line.get(0), record);    // Use first column as unique ID
             }
         } catch (Exception e) {
             exceptionCaught = true;

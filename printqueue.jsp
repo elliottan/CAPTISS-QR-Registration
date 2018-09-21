@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
    <head>
         <meta http-equiv="Refresh" content="5;url=Print"> <!-- Reload Print page every 5 seconds -->
@@ -80,48 +81,11 @@
          <div class="row">
             <div class="col-md-12">
                <h1>CAPTISS Print Page</h1>
-               <form action = "Admin" method = "POST">
-                  <input type="hidden" name="jsppage" value="/admin.jsp">
-                  <a href="#" class="btn btn-sm animated-button victoria-one ">
-                  <!-- <input type = "submit" value = "Refresh and backup" class="submitbutton" /></a> -->
-                  <input type="button" value="Print" class="submitbutton" /></a>
-               </form>
-
-               <!-- Filter by names -->
-               <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for name..." id="nameFilterInput" onkeyup="sortTableByName()">
-               <br />
-
-               <table border="3" class="admintable" id="myTable">
-                  <tr>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(1)')" style="cursor:pointer">No</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(2)')" style="cursor:pointer">Name</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')" style="cursor:pointer">Organization</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(4)')" style="cursor:pointer">Category</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')" style="cursor:pointer">P1</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(6)')" style="cursor:pointer">P2</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(7)')" style="cursor:pointer">P3</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(8)')" style="cursor:pointer">P4</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(9)')" style="cursor:pointer">Time-In</th>
-                  </tr>
-                  <c:forEach items="${printqueue}" var="record" varStatus="status">
-                     <tr class="item">
-                        <td>${record}</td>
-                        <td>${registrationrecords.get(record).get("name")}</td>
-                        <td>${registrationrecords.get(record).get("org")}</td>
-                        <td>${registrationrecords.get(record).get("cat")}</td>
-                        <td>${registrationrecords.get(record).get("p1")}</td>
-                        <td>${registrationrecords.get(record).get("p2")}</td>
-                        <td>${registrationrecords.get(record).get("p3")}</td>
-                        <td>${registrationrecords.get(record).get("p4")}</td>
-                        <td>${registrationtime.get(record)}</td>
-                     </tr>
-                  </c:forEach>
-               </table>
             </div>
          </div>
       </div>
    </body>
    <div class="footer">
-      <p class="copyright">&copy Copyright 2018 College of Alice & Peter Tan. All Rights Reserved.</p>
+      <p class="copyright">&copy; Copyright 2018 College of Alice & Peter Tan. All Rights Reserved.</p>
    </div>
 </html>
