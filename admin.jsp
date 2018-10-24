@@ -23,7 +23,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12">
-               <h1>CAPTISS Registration List</h1>
+               <h1>Registration List</h1>
                <form action = "Admin" method = "POST">
                   <input type="hidden" name="jsppage" value="/admin.jsp">
                   <a href="#" class="btn btn-sm animated-button victoria-one ">
@@ -57,14 +57,9 @@
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(1)')" style="cursor:pointer">#</th>
                      <th>QR</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')" style="cursor:pointer">Name</th>
-                     <th>Organization</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')" style="cursor:pointer">Category</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')" style="cursor:pointer">P1</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(6)')" style="cursor:pointer">P2</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(7)')" style="cursor:pointer">P3</th>
-                     <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(8)')" style="cursor:pointer">P4</th>
+                     <th>Email</th>
                      <th>Time-In</th>
-                     <th>Print</th>
+                     <!-- <th>Print</th> -->
                   </tr>
                   <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
                      <c:if test="${showabsentonly == 'false' || empty registrationtime.get(record.get(\"id\"))}">
@@ -72,13 +67,7 @@
                             <td>${status.index + 1}</td>
                             <td>${record.get("id")}</td>
                             <td>${record.get("name")}</td>
-                            <td>${record.get("org")}</td>
-                            <td>${record.get("cat")}</td>
-                            <td>${record.get("p1")}</td>
-                            <td>${record.get("p2")}</td>
-                            <td>${record.get("p3")}</td>
-                            <td>${record.get("p4")}</td>
-                            <!-- <td>${registrationtime.get(record.get("id"))}</td> -->
+                            <td>${record.get("email")}</td>
                             <td>
                                 <c:choose>
                                     <c:when test="${empty registrationtime.get(record.get(\"id\"))}">
@@ -92,7 +81,7 @@
                                     <c:otherwise>${registrationtime.get(record.get("id"))}</c:otherwise>
                                 </c:choose>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <c:choose>
                                     <c:when test="${empty registrationtime.get(record.get(\"id\"))}">-</c:when>
                                     <c:otherwise>
@@ -105,7 +94,7 @@
                                         </form>
                                     </c:otherwise>
                                 </c:choose>
-                            </td>
+                            </td> -->
                          </tr>
                      </c:if>
                   </c:forEach>

@@ -54,7 +54,7 @@ public class CheckIn extends HttpServlet {
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
                 message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
-                toPrint = true;
+//                toPrint = true;
             } else { // Already registered, do nothing
                 message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
             }
@@ -76,8 +76,8 @@ public class CheckIn extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             // Redirect to qrcode request page with welcome message
-            RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
-//            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+//            RequestDispatcher dispatcher = application.getRequestDispatcher("/captiss.jsp");
+            RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
             dispatcher.forward(request, response);
         }
     }

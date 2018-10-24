@@ -45,16 +45,16 @@ public class WalkIn extends HttpServlet {
 
         // Get parameters sent from walkin.jsp page
         String name = request.getParameter("name");
-        String org = request.getParameter("org");
-//        s
+        String email = request.getParameter("email");
 
         HashMap<String, String> newRecord = new HashMap<>();
         String newUuid = UUID.randomUUID().toString(); // Generate walk-in QR code/ID
         newRecord.put("id", newUuid);
         newRecord.put("name", name.trim().replace(",",""));
 //        newRecord.put("title", title);
-        newRecord.put("org", org.trim().replace(",",""));
-        newRecord.put("cat", "Walk-In");
+//        newRecord.put("org", org.trim().replace(",",""));
+//        newRecord.put("cat", "Walk-In");
+        newRecord.put("email", email.trim());
 
         // Store in registration records, as well as registration time (attendance)
         allLines.put(newUuid, newRecord);
@@ -63,8 +63,8 @@ public class WalkIn extends HttpServlet {
             message = "Welcome, <h3>" + newRecord.get("name") + "</h3>! You have been successfully registered.";
 
             // Add this record into the print queue
-            ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>)application.getAttribute("printqueue");
-            printQueue.offer(newRecord.get("id"));
+//            ConcurrentLinkedQueue<String> printQueue = (ConcurrentLinkedQueue<String>)application.getAttribute("printqueue");
+//            printQueue.offer(newRecord.get("id"));
         } else { // Already registered, do nothing
             message = "Welcome back, <h3>" + newRecord.get("name") + "</h3>, you have already been registered previously.";
         }
@@ -74,7 +74,7 @@ public class WalkIn extends HttpServlet {
         try {
             File file = new File(application.getRealPath("WEB-INF/files/" + Admin.fileFolder + "/" + Admin.fileName));
             fout = new FileOutputStream(file, true);
-            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("org") + "," + newRecord.get("cat") + "\n").getBytes()); // append to end of file
+            fout.write((newUuid + "," + newRecord.get("name") + "," + newRecord.get("email") + "\n").getBytes()); // append to end of file
             application.log("Successfully updated to input .csv file");
         } catch (FileNotFoundException e) {
             application.log("Error when trying to open file to write to (the file may be open), please try writing again");
@@ -89,8 +89,8 @@ public class WalkIn extends HttpServlet {
 
         // Redirect back to check-in page
         request.setAttribute("responsemessage", message);
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -106,8 +106,8 @@ public class WalkIn extends HttpServlet {
         }
 
         // Redirect to walk-in page
-        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
-//        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
+//        RequestDispatcher dispatcher = application.getRequestDispatcher("/walkin.jsp");
+        RequestDispatcher dispatcher = application.getRequestDispatcher("/checkin.jsp");
         dispatcher.forward(request, response);
     }
 

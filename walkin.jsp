@@ -40,9 +40,12 @@
                   Name:
                   <input type = "text" name = "name" autocomplete="off" autofocus class="nametext">
                   <br />
-                  Organization:
-                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, etc)" class="org">
+                  Email:
+                  <input type = "text" name = "email" autocomplete="off" placeholder="EXXXXXXX@u.nus.edu" class="org">
                   <br />
+                  <!-- Organization:
+                  <input type = "text" name = "org" autocomplete="off" placeholder="(e.g CAPT, RC4, etc)" class="org">
+                  <br /> -->
                   <div class="col-md-4 col-md-offset-4">
                      <a href="#" class="btn btn-sm animated-button victoria-one ">
                      <input type = "submit" value = "Submit" / class="submitbutton"></a>

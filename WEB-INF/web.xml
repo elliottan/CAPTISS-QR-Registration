@@ -59,6 +59,10 @@
         <servlet-name>Print</servlet-name>
         <servlet-class>Print</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Captslam</servlet-name>
+        <servlet-class>Captslam</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>CheckIn</servlet-name>
@@ -99,5 +103,9 @@
     <servlet-mapping>
         <servlet-name>Print</servlet-name>
         <url-pattern>/Print</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Captslam</servlet-name>
+        <url-pattern>/Captslam</url-pattern>
     </servlet-mapping>
 </web-app>

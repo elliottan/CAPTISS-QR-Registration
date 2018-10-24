@@ -1,19 +1,25 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 // Extend HttpServlet class
 // Admin Servlet will be loaded on Web Server startup (specified in web.xml file)
@@ -22,11 +28,13 @@ public class Admin extends HttpServlet {
     private ServletContext application; // Get context for logging purposes
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
 
-    public static String fileFolder = "captiss_220918";
-    public static String fileName = "captiss220918.csv";
+    public static String fileFolder = "masters_tea_011018";
+    public static String fileName = "masterstea011018.csv";
     public static String secondaryVenueName = "UTown Audi 3";
     public static int registrationCount = 0; // Count how many people have been registered
-    private static int registrationCountThreshold = 5; // No of registrations before backing up
+    private static int registrationCountThreshold = 4; // No of registrations before backing up
+
+    private List<List<String>> stations = new ArrayList<>();
 
     public void init() throws ServletException {
         application = getServletContext();  // Get context for logging purposes
@@ -38,19 +46,26 @@ public class Admin extends HttpServlet {
         application.setAttribute("printqueue", new ConcurrentLinkedQueue<String>()); // To keep track of current IDs in the queue for printing
         application.setAttribute("showabsentonly", "false");
 
+        // Init captslam variables
+        stations.add(Arrays.asList("Jumping Jacks", "Number left", "Number done", "690"));
+        stations.add(Arrays.asList("Tissue Blowing", "Seconds left", "Seconds done", "220"));
+        stations.add(Arrays.asList("Crunches", "Number left", "Number done", "690"));
+        stations.add(Arrays.asList("Bottle Flip", "Number left", "Number done", "200"));
+        stations.add(Arrays.asList("Push-ups", "Number left", "Number done", "690"));
+        stations.add(Arrays.asList("Balloon Keep It Up", "Seconds left", "Seconds done", "500"));
+        stations.add(Arrays.asList("Burpees", "Number left", "Number done", "690"));
+        stations.add(Arrays.asList("Bottle Fishing", "Number left", "Number done", "69"));
+        stations.add(Arrays.asList("Shirt Fling", "Number left", "Number done", "69"));
+        stations.add(Arrays.asList("Squats", "Number left", "Number done", "690"));
+        stations.add(Arrays.asList("Bubble Blowing", "Number left", "Number done", "69"));
+        application.setAttribute("stationdescriptions", stations);
+
         try {
             pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
                     new ArrayList<>() {{
                         add("id");
                         add("name");
-                        add("org");
-                        add("cat");
-                        add("p1");
-                        add("p2");
-                        add("p3");
-                        add("p4");
-                        add("blank");
-                        add("imgurl");
+                        add("email");
                     }}, "registrationrecords");
             // application.log(((HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords")).toString());
         } catch (Exception e) {
@@ -68,16 +83,16 @@ public class Admin extends HttpServlet {
             application.log(e.toString());
         }
 
-        try {
-            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv",
-                    new ArrayList<>() {{
-                        add("id");
-                        add("timein");
-                    }}, "registrationtime_secondary");
-
-        } catch (Exception e) {
-            application.log(e.toString());
-        }
+//        try {
+//            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv",
+//                    new ArrayList<>() {{
+//                        add("id");
+//                        add("timein");
+//                    }}, "registrationtime_secondary");
+//
+//        } catch (Exception e) {
+//            application.log(e.toString());
+//        }
 
         // Get web server's current IP address and store it as an application variable
         application.setAttribute("ipaddress", "<unknown>");
@@ -191,7 +206,7 @@ public class Admin extends HttpServlet {
         }
 
         backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv", "registrationtime");
-        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv", "registrationtime_secondary");
+//        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv", "registrationtime_secondary");
 
         // Update IP address
         try {
