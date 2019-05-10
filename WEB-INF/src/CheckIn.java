@@ -25,7 +25,6 @@ public class CheckIn extends HttpServlet {
             throws ServletException, IOException {
         // If user is not logged in, redirect to login page
         if (!Admin.isLoggedIn(request, response)) {
-            // Redirect back to login page
             RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
             dispatcher.forward(request, response);
             return;
@@ -53,10 +52,12 @@ public class CheckIn extends HttpServlet {
             ConcurrentHashMap<String, Date> registrationTime = (ConcurrentHashMap<String, Date>) application.getAttribute("registrationtime");
             if (!registrationTime.containsKey(record.get("id"))) {   // If haven't been registered previously
                 registrationTime.putIfAbsent(record.get("id"), new Date()); // Add registration record
-                message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
+//                message = "Welcome, <h3>" + record.get("name") + "</h3>! You have been successfully registered.";
+                message = "Welcome, <h3>" + record.get("name") + "</h3>!";
 //                toPrint = true;
             } else { // Already registered, do nothing
-                message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
+//                message = "Welcome back, <h3>" + record.get("name") + "</h3>, you have already been registered previously.";
+                message = "You have already registered, <h3>" + record.get("name") + "</h3>!";
             }
 
             // Add this record into the print queue

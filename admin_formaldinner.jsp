@@ -25,14 +25,14 @@
             <div class="col-md-12">
                <h1>Registration List</h1>
                <form action = "Admin" method = "POST">
-                  <input type="hidden" name="jsppage" value="/admin.jsp">
+                  <input type="hidden" name="jsppage" value="/admin_formaldinner.jsp">
                   <a href="#" class="btn btn-sm animated-button victoria-one ">
                   <input type = "submit" value = "Refresh and backup" class="submitbutton" /></a>
                </form>
                <c:choose>
                    <c:when test="${showabsentonly == 'true'}">
                        <form action = "Admin" method = "POST">
-                          <input type="hidden" name="jsppage" value="/admin.jsp">
+                          <input type="hidden" name="jsppage" value="/admin_formaldinner.jsp">
                           <input type="hidden" name="showabsentonly" value="false">
                           <a href="#" class="btn btn-sm animated-button victoria-one ">
                           <input type = "submit" value = "Show All" class="submitbutton submitbutton2" /></a>
@@ -40,19 +40,13 @@
                    </c:when>
                    <c:otherwise>
                        <form action = "Admin" method = "POST">
-                          <input type="hidden" name="jsppage" value="/admin.jsp">
+                          <input type="hidden" name="jsppage" value="/admin_formaldinner.jsp">
                           <input type="hidden" name="showabsentonly" value="true">
                           <a href="#" class="btn btn-sm animated-button victoria-one ">
                           <input type = "submit" value = "Show Absent" class="submitbutton submitbutton2" /></a>
                        </form>
                   </c:otherwise>
                </c:choose>
-               <!-- <form action = "Upload" method = "POST">
-                   <input type="hidden" name="jsppage" value="/admin.jsp">
-                   <a href="#" class="btn btn-sm animated-button victoria-one ">
-                   <input type = "file" class="submitbutton" /></a>
-                   <input type = "submit" value = "Upload" class="submitbutton submitbutton2" /></a>
-               </form> -->
 
                <!-- Filter by names -->
                <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for name..." id="nameFilterInput" onkeyup="sortTableByName(2, 'nameFilterInput')">
@@ -64,10 +58,8 @@
                      <th>QR</th>
                      <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')" style="cursor:pointer">Name</th>
                      <th>House</th>
-                     <!-- <th>Email</th>
-                     <th>Dietary</th> -->
+                     <th>Meal</th>
                      <th>Time-In</th>
-                     <!-- <th>Print</th> -->
                   </tr>
                   <c:forEach items="${registrationrecords.values()}" var="record" varStatus="status">
                      <c:if test="${showabsentonly == 'false' || empty registrationtime.get(record.get(\"id\"))}">
@@ -76,8 +68,7 @@
                             <td>${record.get("id")}</td>
                             <td>${record.get("name")}</td>
                             <td>${record.get("house")}</td>
-                            <!-- <td>${record.get("email")}</td>
-                            <td>${record.get("dietary")}</td> -->
+                            <td>${record.get("dietary")}</td>
                             <td>
                                 <c:choose>
                                     <c:when test="${empty registrationtime.get(record.get(\"id\"))}">

@@ -7,10 +7,8 @@ import java.net.UnknownHostException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -24,65 +22,74 @@ import javax.servlet.http.HttpServletResponse;
 // Extend HttpServlet class
 // Admin Servlet will be loaded on Web Server startup (specified in web.xml file)
 public class Admin extends HttpServlet {
+    public static String fileFolder = "farewell_dinner_170419";
+    public static String fileName = "farewelldinner170419.csv";
+    public static String secondaryVenueName = "UTown Audi 3";
+    public static int registrationCount = 0; // Count how many people have been registered
+    private static int registrationCountThreshold = 4; // No of registrations before backing up
     private String message = "";
     private ServletContext application; // Get context for logging purposes
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
 
-    public static String fileFolder = "masters_tea_011018";
-    public static String fileName = "masterstea011018.csv";
-    public static String secondaryVenueName = "UTown Audi 3";
-    public static int registrationCount = 0; // Count how many people have been registered
-    private static int registrationCountThreshold = 4; // No of registrations before backing up
+    // Check if user is logged in
+    public static boolean isLoggedIn(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        if (request.getSession(false) == null
+                || request.getSession(true).getAttribute("username") == null) {
+            return false;
+        }
+        return true;
+    }
 
-    private List<List<String>> stations = new ArrayList<>();
+    // Increment registration count
+    public static int updateRegistrationCount() {
+        registrationCount = (registrationCount + 1) % registrationCountThreshold;
+        return registrationCount;
+    }
+
+    public static boolean isTimeToBackup() {
+        return registrationCount == registrationCountThreshold - 1;
+    }
 
     public void init() throws ServletException {
         application = getServletContext();  // Get context for logging purposes
-        application.setAttribute("labeltemplatepath", application.getRealPath("labelprinting/label_template.lbx").replace("\\","/"));
-        application.setAttribute("labeltemplatepath2", application.getRealPath("labelprinting/label_template_2.lbx").replace("\\","/"));
+
+        application.setAttribute("labeltemplatepath", application.getRealPath("labelprinting/label_template.lbx").replace("\\", "/"));
+        application.setAttribute("labeltemplatepath2", application.getRealPath("labelprinting/label_template_2.lbx").replace("\\", "/"));
 //        application.log((String)application.getAttribute("labeltemplatepath"));
         application.setAttribute("registrationtime", new ConcurrentHashMap<String, Date>()); // To keep track of current registration records
-        application.setAttribute("registrationtime_secondary", new ConcurrentHashMap<String, Date>());
+        application.setAttribute("registrationtime_secondary", new ConcurrentHashMap<String, Date>()); // To track secondary registration location
         application.setAttribute("printqueue", new ConcurrentLinkedQueue<String>()); // To keep track of current IDs in the queue for printing
-        application.setAttribute("showabsentonly", "false");
+        application.setAttribute("showabsentonly", "false"); // Filter for showing only those currently absent from event
 
-        // Init captslam variables
-        stations.add(Arrays.asList("Jumping Jacks", "Number left", "Number done", "690"));
-        stations.add(Arrays.asList("Tissue Blowing", "Seconds left", "Seconds done", "220"));
-        stations.add(Arrays.asList("Crunches", "Number left", "Number done", "690"));
-        stations.add(Arrays.asList("Bottle Flip", "Number left", "Number done", "200"));
-        stations.add(Arrays.asList("Push-ups", "Number left", "Number done", "690"));
-        stations.add(Arrays.asList("Balloon Keep It Up", "Seconds left", "Seconds done", "500"));
-        stations.add(Arrays.asList("Burpees", "Number left", "Number done", "690"));
-        stations.add(Arrays.asList("Bottle Fishing", "Number left", "Number done", "69"));
-        stations.add(Arrays.asList("Shirt Fling", "Number left", "Number done", "69"));
-        stations.add(Arrays.asList("Squats", "Number left", "Number done", "690"));
-        stations.add(Arrays.asList("Bubble Blowing", "Number left", "Number done", "69"));
-        application.setAttribute("stationdescriptions", stations);
-
+        // Specify headers for columns in data file here
+        // Pull and parse registration data name list from file
         try {
             pullRecordsFromFile("WEB-INF/files/" + fileFolder + "/" + fileName,
                     new ArrayList<>() {{
                         add("id");
                         add("name");
-                        add("email");
+//                        add("email");
+                        add("house");
+//                        add("dietary");
                     }}, "registrationrecords");
             // application.log(((HashMap<String, HashMap<String, String>>)application.getAttribute("registrationrecords")).toString());
         } catch (Exception e) {
             application.log(e.toString());
         }
 
+        // Pull and parse current registration attendance info, if "outputfile.csv" exists
         try {
-            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv",
+            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfile.csv",
                     new ArrayList<>() {{
                         add("id");
                         add("timein");
                     }}, "registrationtime");
-
         } catch (Exception e) {
             application.log(e.toString());
         }
 
+        // Pull and parse current secondary registration attendance info, if "outputfile.csv" exists
 //        try {
 //            pullExistingAttendanceRecordsFromFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv",
 //                    new ArrayList<>() {{
@@ -105,9 +112,9 @@ public class Admin extends HttpServlet {
         }
     }
 
+    // Open registration file and parse the csv file of data (immediately when server starts up)
+    // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
     private void pullRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) throws Exception {
-        // Open registration file and parse the csv file of data (immediately when server starts up)
-        // Also stores the data after parsing in a hashmap, stored as an application variable, for easier access
         application.log(application.getRealPath(filePath));
         CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
         HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
@@ -115,8 +122,8 @@ public class Admin extends HttpServlet {
         application.log("Successfully pulled registration records from file: " + filePath);
     }
 
+    // Pull existing attendance records from specified file, if it exists
     private void pullExistingAttendanceRecordsFromFile(String filePath, ArrayList<String> headers, String appAttributeName) throws Exception {
-        // Pull existing attendance records
         CSVUtils csvutils = new CSVUtils(application.getRealPath(filePath), headers, 1);
         HashMap<String, HashMap<String, String>> allLines = csvutils.getLines();    // Get array of all the data
         if (!allLines.isEmpty()) { // Check if the file has contents
@@ -139,26 +146,7 @@ public class Admin extends HttpServlet {
         }
     }
 
-    // Check if user is logged in
-    public static boolean isLoggedIn(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        if (request.getSession(false) == null
-                || request.getSession(true).getAttribute("username") == null) {
-            return false;
-        }
-        return true;
-    }
-
-    // Increment registration count
-    public static int updateRegistrationCount() {
-        registrationCount = (registrationCount + 1) % registrationCountThreshold;
-        return registrationCount;
-    }
-
-    public static boolean isTimeToBackup() {
-        return registrationCount == registrationCountThreshold - 1;
-    }
-
+    // Backup attendance records to outputfile.csv
     private void backupToFile(String filePath, String appAttributeName) throws IOException {
         FileOutputStream fout = null;
 
@@ -205,7 +193,7 @@ public class Admin extends HttpServlet {
             application.log("Show absent only is set to: " + application.getAttribute("showabsentonly").toString());
         }
 
-        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile.csv", "registrationtime");
+        backupToFile("WEB-INF/files/" + fileFolder + "/outputfile.csv", "registrationtime");
 //        backupToFile("WEB-INF/files/" + fileFolder + "/outputfiles/outputfile_secondary.csv", "registrationtime_secondary");
 
         // Update IP address
@@ -230,7 +218,6 @@ public class Admin extends HttpServlet {
             throws ServletException, IOException {
         // If user is not logged in, redirect to login page
         if (!Admin.isLoggedIn(request, response)) {
-            // Redirect back to login page
             RequestDispatcher dispatcher = application.getRequestDispatcher("/index.jsp");
             dispatcher.forward(request, response);
             return;
